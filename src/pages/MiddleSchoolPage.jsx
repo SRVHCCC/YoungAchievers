@@ -1,132 +1,127 @@
 import React from "react";
 
-const middleSchoolFeatures = [
+const middleSchoolModules = [
   {
-    title: "Concept-Based Learning",
-    description:
-      "Strong focus on understanding concepts deeply rather than rote memorization.",
-    icon: "🧠"
+    title: "Advanced Concepts",
+    method: "Depth-First Learning",
+    description: "In Middle School, we move beyond the basics. We focus on in-depth understanding of complex scientific theories and mathematical logic to prepare students for high school challenges.",
+    image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=800&q=80",
+    tag: "Analytical Thinking",
+    color: "bg-[#673AB7]" // Purple
   },
   {
     title: "Academic Discipline",
-    description:
-      "Structured learning environment that promotes focus, responsibility and consistency.",
-    icon: "📏"
+    method: "Structured Responsibility",
+    description: "We instill a sense of accountability and time management. Our structured environment ensures that students develop the focus and consistency required for lifelong success.",
+    image: "https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&w=800&q=80",
+    tag: "Self-Discipline",
+    color: "bg-[#FFB74D]" // Orange
   },
   {
-    title: "Critical Thinking",
-    description:
-      "Encouraging students to analyze, question and apply knowledge practically.",
-    icon: "💡"
+    title: "Scientific Temper",
+    method: "Inquiry & Research",
+    description: "Students are encouraged to analyze data and perform structured experiments. We foster a mindset that questions 'why' and seeks evidence-based answers.",
+    image: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=800&q=80",
+    tag: "Science & Lab",
+    color: "bg-[#FF5E5E]" // Red
   },
   {
-    title: "Personality Development",
-    description:
-      "Focus on confidence, communication skills and leadership qualities.",
-    icon: "🎯"
+    title: "Digital Leadership",
+    method: "Advanced IT Skills",
+    description: "Moving from basic computer literacy to digital creation. Students learn to use technology for research, presentation, and fundamental coding logic.",
+    image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=800&q=80",
+    tag: "Future Ready",
+    color: "bg-[#00BCD4]" // Cyan
+  },
+  {
+    title: "Character Building",
+    method: "Ethics & Values",
+    description: "Beyond textbooks, we focus on communication skills and emotional intelligence. We aim to build responsible, ethical, and confident young leaders.",
+    image: "https://images.unsplash.com/photo-1529070538774-1843cb3265df?auto=format&fit=crop&w=800&q=80",
+    tag: "Personality Dev",
+    color: "bg-[#4DD0E1]" // Light Cyan
   }
 ];
 
 const MiddleSchoolPage = () => {
   return (
-    <div className="font-sans">
+    <div className="font-sans text-slate-800 bg-white">
 
-      {/* ===== Banner ===== */}
-      <section className="bg-[#4FC3F7] py-16 text-center text-white">
-        <h1 className="text-5xl font-bold mb-4">
-          Class 6 – 8 | Concept & Discipline
-        </h1>
-        <p className="text-lg opacity-90">
-          Preparing students for higher education and life skills
-        </p>
-      </section>
-
-      {/* ===== Introduction ===== */}
-      <section className="container mx-auto px-6 py-20 flex flex-col md:flex-row items-center gap-12">
-
-        {/* Image */}
-        <div className="md:w-1/2">
-          <img
-            src="https://images.unsplash.com/photo-1529070538774-1843cb3265df?auto=format&fit=crop&w=900&q=80"
-            alt="Middle School Classroom"
-            className="rounded-3xl shadow-xl border-8 border-white"
-          />
-        </div>
-
-        {/* Content */}
-        <div className="md:w-1/2">
-          <h2 className="text-[#673AB7] text-4xl font-bold mb-6">
-            Building Strong Concepts with Discipline
-          </h2>
-          <p className="text-gray-600 mb-6 leading-relaxed">
-            At <strong>Young Achievers</strong>, our Middle School program
-            (Class 6 – 8) is designed to strengthen academic concepts
-            while developing discipline, responsibility and self-confidence.
-          </p>
-
-          <p className="text-gray-600 leading-relaxed">
-            Students are guided to think independently, manage their time
-            effectively and develop a strong sense of accountability.
+      {/* 1. COMPACT HERO SECTION (Matched to PlayAndLearn & Primary) */}
+      <section className="bg-[#fdfcf8] py-12 md:py-16 text-center border-b border-stone-200 relative overflow-hidden">
+        <div className="container mx-auto px-6 relative z-10">
+          <h1 className="text-3xl md:text-5xl font-black mb-4 uppercase tracking-tight text-slate-900">
+            Middle School: <br className="hidden md:block" /> 
+            <span className="text-[#00BCD4]">Class 6 – 8</span>
+          </h1>
+          <p className="text-lg md:text-xl max-w-2xl mx-auto font-medium text-slate-500 leading-relaxed">
+            Strengthening academic concepts while fostering discipline, 
+            responsibility, and analytical thinking for the next generation.
           </p>
         </div>
+        <div className="absolute -top-10 -right-10 w-48 h-48 bg-[#4FC3F7]/10 rounded-full"></div>
+        <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-stone-100 rounded-full"></div>
       </section>
 
-      {/* ===== Key Features ===== */}
-      <section className="bg-gray-50 py-20">
-        <div className="container mx-auto px-6 text-center">
-          <h2 className="text-4xl font-bold text-[#673AB7] mb-12">
-            Our Middle School Approach
-          </h2>
+      {/* 2. ACADEMIC MODULES (Matched Photo-Story Style) */}
+      <section className="py-20 container mx-auto px-6">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-black text-slate-900 uppercase">Academic Core</h2>
+          <div className="w-20 h-1.5 bg-[#FFB74D] mx-auto mt-4 rounded-full"></div>
+        </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            {middleSchoolFeatures.map((item, index) => (
-              <div
-                key={index}
-                className="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition"
-              >
-                <div className="text-5xl mb-4">{item.icon}</div>
-                <h4 className="font-bold text-lg mb-2">{item.title}</h4>
-                <p className="text-sm text-gray-500">
+        <div className="space-y-24 md:space-y-32">
+          {middleSchoolModules.map((item, index) => (
+            <div key={index} className={`flex flex-col ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-10 md:gap-16`}>
+              
+              {/* Photo Side */}
+              <div className="md:w-1/2 relative group w-full">
+                <div className={`absolute -top-3 -left-3 ${item.color} w-full h-full rounded-[2rem] -z-10 opacity-20`}></div>
+                <img 
+                  src={item.image} 
+                  alt={item.title} 
+                  className="rounded-[2rem] shadow-xl border-4 border-white w-full h-[300px] md:h-[400px] object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+                />
+                <div className={`absolute top-6 left-6 ${item.color} text-white px-5 py-1.5 rounded-full font-black shadow-lg text-xs uppercase tracking-widest`}>
+                  {item.tag}
+                </div>
+              </div>
+
+              {/* Text Side */}
+              <div className="md:w-1/2 text-left space-y-4 md:space-y-6">
+                <h3 className={`font-black uppercase tracking-[0.25em] text-xs md:text-sm text-[#00BCD4]`}>{item.method}</h3>
+                <h2 className="text-3xl md:text-4xl font-black text-slate-900 leading-tight">{item.title}</h2>
+                <p className="text-gray-500 text-base md:text-lg leading-relaxed">
                   {item.description}
                 </p>
+                <div className="flex items-center gap-3 text-[#673AB7] font-bold">
+                  <span className="text-xl">✨</span>
+                  <span className="text-sm md:text-base italic uppercase tracking-tighter">Transitioning from learning to mastery.</span>
+                </div>
               </div>
-            ))}
-          </div>
+
+            </div>
+          ))}
         </div>
       </section>
 
-      {/* ===== Subjects Offered ===== */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-6 text-center">
-          <h2 className="text-4xl font-bold text-[#673AB7] mb-6">
-            Subjects We Offer
-          </h2>
-
-          <p className="max-w-3xl mx-auto text-gray-600 mb-12">
-            Our curriculum ensures a balanced and in-depth understanding
-            of all core subjects.
+      {/* 3. FINAL CALL TO ACTION (Matched Styling) */}
+      <section className="bg-[#1A202C] py-16 text-center text-white">
+        <div className="container mx-auto px-6">
+          <h2 className="text-2xl md:text-4xl font-black mb-6 text-[#00BCD4]">Empower Your Child's Future</h2>
+          <p className="text-base md:text-lg text-gray-400 mb-10 max-w-xl mx-auto px-4 font-medium">
+            Join the 2025-26 Academic Session. Middle School is the foundation for future professional success. 
+            Secure your seat at Young Achievers, Panna.
           </p>
-
-          <div className="grid grid-cols-1 md:grid-cols-6 gap-6">
-            <div className="p-4 border rounded-xl">English</div>
-            <div className="p-4 border rounded-xl">Mathematics</div>
-            <div className="p-4 border rounded-xl">Science</div>
-            <div className="p-4 border rounded-xl">Social Science</div>
-            <div className="p-4 border rounded-xl">Computer Science</div>
-            <div className="p-4 border rounded-xl">Moral Education</div>
+          <div className="flex flex-col sm:flex-row justify-center gap-4 md:gap-6 px-6">
+            <button className="bg-[#FF5E5E] text-white px-10 py-4 rounded-full font-black shadow-lg hover:bg-red-600 transition tracking-widest uppercase text-sm">
+              Apply Now
+            </button>
+            <button className="bg-[#00BCD4] text-white px-10 py-4 rounded-full font-black shadow-lg hover:bg-cyan-500 transition tracking-widest uppercase text-sm">
+              Contact Desk
+            </button>
           </div>
         </div>
-      </section>
-
-      {/* ===== Discipline & Values ===== */}
-      <section className="bg-[#673AB7] py-16 text-center text-white">
-        <h2 className="text-3xl font-bold mb-4">
-          Discipline, Values & Responsibility
-        </h2>
-        <p className="max-w-2xl mx-auto opacity-90">
-          Our school culture emphasizes punctuality, respect, discipline
-          and ethical values to help students grow into responsible individuals.
-        </p>
       </section>
 
     </div>

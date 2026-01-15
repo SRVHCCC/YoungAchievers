@@ -13,12 +13,12 @@ const HomePage = () => {
           className="absolute inset-0 w-full h-full object-cover opacity-80"
         />
 
-        <div className="absolute inset-0 flex flex-col justify-center items-end pr-20 text-right bg-gradient-to-l from-white/40 to-transparent">
-          <h2 className="text-[#FF5E5E] text-2xl font-bold italic">
+        <div className="absolute inset-0 flex flex-col justify-center items-center md:items-end px-6 md:pr-20 text-center md:text-right bg-gradient-to-l from-white/40 to-transparent">
+          <h2 className="text-[#FF5E5E] text-xl md:text-2xl font-bold italic">
             English Medium School (Nursery – Class 8)
           </h2>
 
-          <h1 className="text-7xl font-bold text-white mt-2 drop-shadow-lg">
+          <h1 className="text-5xl md:text-7xl font-bold text-white mt-2 drop-shadow-lg">
             Young Achievers
           </h1>
 
@@ -27,17 +27,18 @@ const HomePage = () => {
             discipline and overall child development.
           </p>
 
-          <div className="flex gap-4 mt-8">
+          {/* Fixed Button Container for Mobile */}
+          <div className="flex flex-col sm:flex-row gap-4 mt-8 w-full sm:w-auto">
             <Link
               to="/admissions"
-              className="bg-[#FF5E5E] text-white px-8 py-3 rounded-full font-bold shadow-lg hover:bg-[#e14d4d] transition transform hover:scale-105"
+              className="bg-[#FF5E5E] text-white px-8 py-3 rounded-full font-bold shadow-lg hover:bg-[#e14d4d] transition transform hover:scale-105 text-center"
             >
               Admission Open 2025–26
             </Link>
 
             <Link
               to="/contact"
-              className="bg-[#673AB7] text-white px-8 py-3 rounded-full font-bold shadow-lg hover:bg-[#5a32a3] transition transform hover:scale-105"
+              className="bg-[#673AB7] text-white px-8 py-3 rounded-full font-bold shadow-lg hover:bg-[#5a32a3] transition transform hover:scale-105 text-center"
             >
               Book Campus Visit
             </Link>
@@ -82,7 +83,7 @@ const HomePage = () => {
 
       {/* ================= WELCOME SECTION ================= */}
       <section className="py-20 text-center container mx-auto px-6">
-        <h2 className="text-[#4DD0E1] text-5xl font-bold">
+        <h2 className="text-[#4DD0E1] text-4xl md:text-5xl font-bold">
           Welcome to Young Achievers
         </h2>
         <div className="w-24 h-1 bg-[#FF5E5E] mx-auto mt-4"></div>
@@ -101,7 +102,7 @@ const HomePage = () => {
           <div className="md:w-1/2">
             <img
               src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=800&q=80"
-              className="rounded-3xl shadow-xl border-8 border-white"
+              className="rounded-3xl shadow-xl border-8 border-white w-full"
               alt="Classroom" />
           </div>
 
@@ -127,28 +128,28 @@ const HomePage = () => {
       {/* ================= WHY CHOOSE US ================= */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-6 text-center">
-          <h2 className="text-[#673AB7] text-4xl font-bold mb-12">
+          <h2 className="text-[#673AB7] text-3xl md:text-4xl font-bold mb-12">
             Why Parents Choose Young Achievers
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div>🏫 Smart Classrooms</div>
-            <div>👨‍🏫 Experienced Teachers</div>
-            <div>🛡 Safe & Disciplined Campus</div>
-            <div>🏆 Overall Child Development</div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+            <div className="p-4 border rounded-xl shadow-sm">🏫 Smart Classrooms</div>
+            <div className="p-4 border rounded-xl shadow-sm">👨‍🏫 Experienced Teachers</div>
+            <div className="p-4 border rounded-xl shadow-sm">🛡 Safe & Disciplined Campus</div>
+            <div className="p-4 border rounded-xl shadow-sm">🏆 Overall Child Development</div>
           </div>
         </div>
       </section>
 
       {/* ================= FINAL CTA ================= */}
-      <section className="bg-[#673AB7] py-16 text-center text-white">
+      <section className="bg-[#673AB7] py-16 text-center text-white px-6">
         <h2 className="text-3xl font-bold mb-6">
-          Admissions Open for 2025–26
+          Admissions Open for 2026–27
         </h2>
 
         <Link
           to="/admissions"
-          className="bg-[#00BCD4] px-10 py-4 rounded-full font-black text-lg hover:bg-white hover:text-[#00BCD4] transition"
+          className="bg-[#00BCD4] px-10 py-4 rounded-full font-black text-lg hover:bg-white hover:text-[#00BCD4] transition inline-block shadow-lg"
         >
           Apply for Admission
         </Link>

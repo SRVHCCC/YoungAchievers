@@ -59,7 +59,7 @@ const AdmissionInquiry = () => {
             </div>
             <div className="mt-12 bg-black/10 p-4 rounded-2xl">
               <p className="text-sm">Admission Office:</p>
-              <p className="font-bold">+91 98765 43210</p>
+              <p className="font-bold">+91 87706 98713</p>
             </div>
           </div>
 

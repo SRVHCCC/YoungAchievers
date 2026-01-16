@@ -1,99 +1,195 @@
-import React from "react";
-
-const primaryFeatures = [
-  {
-    title: "Core Foundation",
-    description: "In-depth focus on English, Math, and Science to build strong fundamental knowledge.",
-    icon: "📘",
-    image: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=600&q=80"
-  },
-  {
-    title: "Critical Thinking",
-    description: "Moving beyond memorization to help students understand the 'How' and 'Why' of every topic.",
-    icon: "🧠",
-    image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=600&q=80"
-  },
-  {
-    title: "Confident Expression",
-    description: "Daily reading and public speaking exercises to develop bilingual communication skills.",
-    icon: "🗣️",
-    image: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=800&q=80",
-  },
-  {
-    title: "Hands-on Learning",
-    description: "Monthly projects and basic lab activities that make learning practical and engaging.",
-    icon: "🧩",
-    image: "https://images.unsplash.com/photo-1564410267841-915d8e4d71ea?auto=format&fit=crop&w=600&q=80"
-  }
-];
+import React, { useMemo } from "react";
+import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const PrimaryFoundationPage = () => {
+  const { t } = useTranslation();
+
+  const heroTags = useMemo(
+    () => t("primaryFoundation.hero.tags", { returnObjects: true }) || [],
+    [t]
+  );
+
+  const miniStats = useMemo(
+    () => t("primaryFoundation.hero.miniStats", { returnObjects: true }) || [],
+    [t]
+  );
+
+  const primaryFeatures = useMemo(
+    () => t("primaryFoundation.pillars.items", { returnObjects: true }) || [],
+    [t]
+  );
+
+  const curriculum = useMemo(
+    () => t("primaryFoundation.curriculum.items", { returnObjects: true }) || [],
+    [t]
+  );
+
+  const environmentPoints = useMemo(
+    () => t("primaryFoundation.environment.points", { returnObjects: true }) || [],
+    [t]
+  );
+
+  const pillarTags = useMemo(
+    () => t("primaryFoundation.pillars.pillarsTags", { returnObjects: true }) || [],
+    [t]
+  );
+
   return (
-    <div className="font-sans text-slate-700 bg-white">
-      
-      {/* 1. REFINED BANNER */}
-      <section className="bg-[#fdfcf8] py-20 border-b border-stone-200 text-center">
-        <div className="container mx-auto px-6">
-          <span className="text-[#334155] font-bold tracking-[0.2em] uppercase text-xs">Excellence in Education</span>
-          <h1 className="text-4xl md:text-6xl font-serif font-bold mt-4 text-slate-900 italic">
-            Primary Foundation
-          </h1>
-          <div className="w-16 h-1 bg-stone-300 mx-auto my-6"></div>
-          <p className="text-slate-500 max-w-2xl mx-auto text-lg leading-relaxed">
-            Nurturing young minds through a curriculum designed to foster academic rigor and emotional intelligence for Classes 1 to 5.
-          </p>
+    <div className="font-sans text-slate-800 bg-white">
+      {/* ================= HERO ================= */}
+      <section className="relative overflow-hidden">
+        <div className="bg-gradient-to-r from-[#673AB7] via-[#4FC3F7] to-[#FFB74D] py-20 md:py-28 text-white">
+          <div className="container mx-auto px-6 relative z-10 text-center">
+            <div className="inline-flex flex-wrap justify-center gap-2 mb-6">
+              {heroTags.map((tag, idx) => (
+                <span
+                  key={idx}
+                  className="px-4 py-2 rounded-full bg-white/15 border border-white/20 text-xs font-black uppercase tracking-wider"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+
+            <h1 className="text-4xl md:text-6xl font-black leading-tight">
+              {t("primaryFoundation.hero.title")}
+            </h1>
+
+            <p className="max-w-3xl mx-auto mt-6 text-lg md:text-xl opacity-90 font-medium leading-relaxed">
+              {t("primaryFoundation.hero.subtitle")}
+            </p>
+
+            <div className="flex flex-wrap justify-center gap-4 mt-10">
+              <Link
+                to="/admissions"
+                className="bg-[#FF5E5E] hover:bg-[#ff3d3d] px-10 py-4 rounded-full font-black shadow-lg transition"
+              >
+                {t("primaryFoundation.hero.btnApply")}
+              </Link>
+
+              <Link
+                to="/contact"
+                className="bg-white/95 hover:bg-white text-[#673AB7] px-10 py-4 rounded-full font-black shadow-lg transition"
+              >
+                {t("primaryFoundation.hero.btnContact")}
+              </Link>
+            </div>
+
+            {/* mini stats */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-12 max-w-4xl mx-auto">
+              {miniStats.map((s, idx) => (
+                <div
+                  key={idx}
+                  className="bg-white/10 border border-white/20 rounded-2xl p-5"
+                >
+                  <div className="text-2xl font-black">{s.value}</div>
+                  <div className="text-xs font-bold uppercase tracking-wider opacity-90">
+                    {s.label}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
+
+        {/* decorative blobs */}
+        <div className="absolute -top-20 -left-20 w-56 h-56 bg-white/15 rounded-full"></div>
+        <div className="absolute -bottom-24 -right-20 w-72 h-72 bg-black/10 rounded-full"></div>
+
+        {/* white wave */}
+        <div className="h-12 bg-white rounded-t-[45px] -mt-10"></div>
       </section>
 
-      {/* 2. CORE FOCUS AREA */}
-      <section className="py-24 container mx-auto px-6">
-        <div className="flex flex-col md:flex-row items-end justify-between mb-16 gap-6">
-          <div className="max-w-xl">
-            <h2 className="text-3xl font-bold text-slate-900 mb-4">Academic Pillars</h2>
-            <p className="text-slate-500">Our primary wing focuses on four essential quadrants of development that prepare students for middle school and beyond.</p>
-          </div>
-          <div className="hidden md:block h-px bg-stone-200 flex-grow mx-10 mb-4"></div>
+      {/* ================= ACADEMIC PILLARS ================= */}
+      <section className="container mx-auto px-6 py-20">
+        <div className="text-center mb-14">
+          <h2 className="text-3xl md:text-5xl font-black text-slate-900">
+            {t("primaryFoundation.pillars.title")}
+          </h2>
+          <p className="text-gray-600 mt-4 max-w-3xl mx-auto text-lg">
+            {t("primaryFoundation.pillars.subtitle")}
+          </p>
+          <div className="w-24 h-1.5 bg-[#FFB74D] mx-auto mt-6 rounded-full"></div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          {primaryFeatures.map((item, index) => (
-            <div key={index} className="group relative">
-              <div className="overflow-hidden rounded-2xl aspect-video mb-6">
-                <img src={item.image} alt={item.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-              </div>
-              <div className="flex gap-6">
-                <span className="text-4xl">{item.icon}</span>
-                <div>
-                  <h3 className="text-xl font-bold text-slate-900 mb-2">{item.title}</h3>
-                  <p className="text-slate-500 leading-relaxed">{item.description}</p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-7">
+          {primaryFeatures.map((item, idx) => (
+            <div
+              key={idx}
+              className="rounded-3xl border shadow-sm hover:shadow-2xl transition bg-white p-9"
+            >
+              <div className="flex items-start gap-5">
+                <div
+                  className="w-14 h-14 rounded-2xl flex items-center justify-center text-3xl"
+                  style={{ backgroundColor: `${item.color}18` }}
+                >
+                  {item.icon}
                 </div>
+
+                <div>
+                  <h3 className="text-2xl font-black" style={{ color: item.color }}>
+                    {item.title}
+                  </h3>
+                  <p className="text-gray-600 mt-2 leading-relaxed">
+                    {item.description}
+                  </p>
+                </div>
+              </div>
+
+              <div className="mt-7 flex gap-3 flex-wrap">
+                <span
+                  className="px-4 py-2 rounded-full text-sm font-bold"
+                  style={{
+                    backgroundColor: `${item.color}15`,
+                    color: item.color,
+                  }}
+                >
+                  {pillarTags[0] || "✅ Concept Clarity"}
+                </span>
+                <span className="px-4 py-2 rounded-full text-sm font-bold bg-gray-100 text-gray-700">
+                  {pillarTags[1] || "✅ Weekly Revision"}
+                </span>
               </div>
             </div>
           ))}
         </div>
       </section>
 
-      {/* 3. NEW SECTION: SUBJECT ROADMAP (Bda karne ke liye) */}
-      <section className="py-24 bg-stone-50 border-y border-stone-200">
+      {/* ================= STRUCTURED CURRICULUM ================= */}
+      <section className="py-20 bg-gray-50 border-y">
         <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-slate-900">Structured Curriculum</h2>
-            <p className="text-slate-500 mt-2">Subjects mapped to holistic cognitive growth.</p>
+          <div className="text-center mb-14">
+            <h2 className="text-3xl md:text-5xl font-black text-slate-900">
+              {t("primaryFoundation.curriculum.title")}
+            </h2>
+            <p className="text-gray-600 mt-4 text-lg">
+              {t("primaryFoundation.curriculum.subtitle")}
+            </p>
+            <div className="w-24 h-1.5 bg-[#4FC3F7] mx-auto mt-6 rounded-full"></div>
           </div>
-          
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              { title: "Languages", list: ["English Literature", "Hindi Vyakaran", "Phonics Mastery"] },
-              { title: "Sciences", list: ["General Science", "EVS Projects", "Nature Observation"] },
-              { title: "Numeracy", list: ["Mental Math", "Geometry Basics", "Data Handling"] },
-              { title: "Digital Literacy", list: ["Basic Computing", "Logic Games", "Smart Board Interaction"] }
-            ].map((box, i) => (
-              <div key={i} className="bg-white p-8 rounded-2xl border border-stone-200">
-                <h4 className="font-bold text-slate-900 mb-4 border-b border-stone-100 pb-2">{box.title}</h4>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {curriculum.map((box, i) => (
+              <div
+                key={i}
+                className="bg-white p-8 rounded-3xl border shadow-sm hover:shadow-xl transition"
+              >
+                <div className="flex items-center gap-3 mb-4">
+                  <span className="text-3xl">{box.icon}</span>
+                  <h4 className="font-black text-slate-900 text-lg">
+                    {box.title}
+                  </h4>
+                </div>
+
                 <ul className="space-y-3">
-                  {box.list.map((item, j) => (
-                    <li key={j} className="text-sm text-slate-500 flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-stone-300"></span> {item}
+                  {(box.list || []).map((x, j) => (
+                    <li
+                      key={j}
+                      className="text-sm text-gray-600 flex items-center gap-2"
+                    >
+                      <span className="w-2 h-2 rounded-full bg-gray-300"></span>
+                      {x}
                     </li>
                   ))}
                 </ul>
@@ -103,57 +199,94 @@ const PrimaryFoundationPage = () => {
         </div>
       </section>
 
-      {/* 4. NEW SECTION: CLASSROOM ENVIRONMENT */}
-      <section className="py-24 container mx-auto px-6">
-        <div className="flex flex-col lg:flex-row items-center gap-20">
-          <div className="lg:w-1/2 order-2 lg:order-1">
-            <h2 className="text-4xl font-bold text-slate-900 mb-8 leading-tight">Modern Learning <br/>Environment</h2>
-            <div className="space-y-8">
-              {[
-                { t: "1:25 Teacher Ratio", d: "Personalized attention ensures no student is left behind in the learning curve." },
-                { t: "Smart Class Integration", d: "Visual aids and interactive digital tools used for complex topic simplification." },
-                { t: "Safe & Disciplined", d: "A respectful atmosphere where discipline is taught through positive reinforcement." }
-              ].map((point, i) => (
-                <div key={i} className="flex gap-5">
-                  <div className="flex-shrink-0 w-8 h-8 bg-slate-900 text-white rounded-full flex items-center justify-center text-xs font-bold">{i+1}</div>
+      {/* ================= LEARNING ENVIRONMENT ================= */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-14">
+            <h2 className="text-3xl md:text-5xl font-black text-slate-900">
+              {t("primaryFoundation.environment.title")}
+            </h2>
+            <p className="text-gray-600 mt-4 max-w-2xl mx-auto text-lg">
+              {t("primaryFoundation.environment.subtitle")}
+            </p>
+            <div className="w-24 h-1.5 bg-[#673AB7] mx-auto mt-6 rounded-full"></div>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+            {environmentPoints.map((point, i) => (
+              <div
+                key={i}
+                className="rounded-3xl border p-8 shadow-sm hover:shadow-xl transition bg-white"
+              >
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-2xl bg-[#673AB7] text-white font-black flex items-center justify-center">
+                    {point.badge}
+                  </div>
                   <div>
-                    <h5 className="font-bold text-slate-800 mb-1">{point.t}</h5>
-                    <p className="text-sm text-slate-500 leading-relaxed">{point.d}</p>
+                    <h4 className="text-xl font-black text-slate-900">
+                      {point.t}
+                    </h4>
+                    <p className="text-gray-600 mt-2 leading-relaxed">
+                      {point.d}
+                    </p>
                   </div>
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
-          <div className="lg:w-1/2 order-1 lg:order-2">
-            <div className="relative">
-              <img 
-                src="https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=1000&q=80" 
-                className="rounded-3xl shadow-sm z-10 relative" 
-                alt="Interactive learning" 
-              />
-              <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-stone-100 -z-0 rounded-2xl"></div>
-            </div>
+
+          {/* Notice Card */}
+          <div className="mt-14 bg-[#4FC3F7]/10 border border-[#4FC3F7]/20 rounded-3xl p-8 text-center">
+            <h4 className="text-xl font-black text-[#4FC3F7]">
+              {t("primaryFoundation.environment.notice.title")}
+            </h4>
+            <p className="text-gray-700 mt-2 max-w-2xl mx-auto">
+              {t("primaryFoundation.environment.notice.desc")}
+            </p>
           </div>
         </div>
       </section>
 
-      {/* 5. FINAL CALL TO ACTION */}
-      <section className="bg-slate-900 py-20 text-center text-white">
-        <div className="container mx-auto px-6">
-          <h2 className="text-3xl md:text-4xl font-serif italic mb-6 text-stone-200 italic">Secure your child's future today.</h2>
-          <p className="text-slate-400 mb-10 max-w-lg mx-auto">Registration for the 2025-26 Academic Session is now open for Classes 1 to 5.</p>
-          <div className="flex flex-col sm:flex-row justify-center gap-6 font-bold tracking-widest uppercase text-xs">
-            <button className="bg-white text-slate-900 px-10 py-4 rounded-full hover:bg-stone-200 transition duration-300">
-              Apply Now
-            </button>
-            <button className="border border-stone-700 text-white px-10 py-4 rounded-full hover:bg-slate-800 transition duration-300">
-              Download Syllabus
-            </button>
-          </div>
-          <p className="mt-12 text-slate-500 text-sm">📍 Gram Patna Tamoli, Panna | 📞 +91 87706 98713</p>
-        </div>
-      </section>
+      {/* ================= FINAL CTA ================= */}
+      <section className="relative overflow-hidden">
+        <div className="bg-[#0f172a] py-20 text-center text-white">
+          <div className="container mx-auto px-6 relative z-10">
+            <h2 className="text-3xl md:text-5xl font-black mb-6 text-[#00BCD4]">
+              {t("primaryFoundation.finalCta.title")}
+            </h2>
 
+            <p className="text-base md:text-lg text-gray-300 mb-12 max-w-2xl mx-auto leading-relaxed">
+              {t("primaryFoundation.finalCta.subtitle")}
+            </p>
+
+            <div className="flex flex-col sm:flex-row justify-center gap-5 font-black uppercase tracking-widest text-sm">
+              <Link
+                to="/admissions"
+                className="bg-[#FF5E5E] px-12 py-5 rounded-2xl shadow-2xl hover:bg-red-600 transition transform hover:-translate-y-1"
+              >
+                {t("primaryFoundation.finalCta.btnApply")}
+              </Link>
+
+              <Link
+                to="/contact"
+                className="bg-white text-[#0f172a] px-12 py-5 rounded-2xl shadow-2xl hover:bg-gray-100 transition transform hover:-translate-y-1"
+              >
+                {t("primaryFoundation.finalCta.btnTalk")}
+              </Link>
+            </div>
+
+            <p className="mt-12 text-gray-400 text-sm">
+              {t("primaryFoundation.finalCta.footer")}
+            </p>
+          </div>
+
+          {/* Decorative circles */}
+          <div className="absolute -top-24 -right-20 w-72 h-72 bg-[#00BCD4] opacity-10 rounded-full"></div>
+          <div className="absolute -bottom-24 -left-20 w-72 h-72 bg-[#FF5E5E] opacity-10 rounded-full"></div>
+        </div>
+
+        <div className="h-12 bg-white rounded-t-[45px] -mt-10"></div>
+      </section>
     </div>
   );
 };

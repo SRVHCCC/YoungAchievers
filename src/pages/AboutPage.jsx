@@ -1,150 +1,304 @@
-import React from 'react';
+import React, { useMemo } from "react";
+import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+
+// Local asset
+import aboutUsImg from "../assets/img/aboutus.png";
 
 const AboutPage = () => {
+  const { t } = useTranslation();
+
+  const chips = useMemo(
+    () => t("about.intro.chips", { returnObjects: true }) || [],
+    [t]
+  );
+
+  const journeySteps = useMemo(
+    () => t("about.journey.steps", { returnObjects: true }) || [],
+    [t]
+  );
+
+  const features = useMemo(
+    () => t("about.features.items", { returnObjects: true }) || [],
+    [t]
+  );
+
   return (
     <div className="font-sans text-slate-800 bg-white">
-      
-      {/* 1. HERO BANNER - Original Blue/Cyan Theme */}
-      <section className="bg-[#4FC3F7] py-16 text-center text-white relative overflow-hidden">
-        <div className="container mx-auto px-6 relative z-10">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            About Young Achievers
-          </h1>
-          <p className="text-lg opacity-90 font-medium">
-            Shaping Young Minds in Patna Tamoli (Panna)
-          </p>
+      {/* ================= HERO ================= */}
+      <section className="relative overflow-hidden">
+        <div className="bg-gradient-to-r from-[#673AB7] via-[#4FC3F7] to-[#FFB74D] text-white py-20 md:py-28">
+          <div className="container mx-auto px-6 relative z-10 text-center">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/15 border border-white/20 text-sm font-bold mb-6">
+              {t("about.hero.badge")}
+            </div>
+
+            <h1 className="text-4xl md:text-6xl font-black leading-tight">
+              {t("about.hero.title")}
+            </h1>
+
+            <p className="max-w-3xl mx-auto mt-5 text-lg md:text-xl opacity-90 font-medium">
+              {t("about.hero.subtitle")}
+            </p>
+
+            <div className="flex flex-wrap justify-center gap-4 mt-10">
+              <Link
+                to="/admissions"
+                className="bg-[#FF5E5E] hover:bg-[#ff3d3d] px-10 py-4 rounded-full font-black shadow-lg transition"
+              >
+                {t("about.hero.btnAdmissions")}
+              </Link>
+              <Link
+                to="/contact"
+                className="bg-white/90 hover:bg-white text-[#673AB7] px-10 py-4 rounded-full font-black shadow-lg transition"
+              >
+                {t("about.hero.btnContact")}
+              </Link>
+            </div>
+          </div>
         </div>
-        {/* Decorative elements */}
-        <div className="absolute top-0 left-0 w-24 h-24 bg-white/10 rounded-full -translate-x-12 -translate-y-12"></div>
-        <div className="absolute bottom-0 right-0 w-32 h-32 bg-black/5 rounded-full translate-x-10 translate-y-10"></div>
+
+        {/* Decorative blobs */}
+        <div className="absolute -top-12 -left-12 w-40 h-40 bg-white/15 rounded-full"></div>
+        <div className="absolute -bottom-16 -right-10 w-56 h-56 bg-black/10 rounded-full"></div>
+
+        {/* White wave */}
+        <div className="h-12 bg-white rounded-t-[45px] -mt-10"></div>
       </section>
 
-      {/* 2. SCHOOL INTRODUCTION - Photo Story Layout */}
+      {/* ================= INTRO SECTION (IMAGE + TEXT) ================= */}
       <section className="container mx-auto px-6 py-20">
-        <div className="flex flex-col lg:flex-row gap-16 items-center">
-          
-          {/* Photo Side with Original Orange Accent */}
-          <div className="lg:w-1/2 relative group w-full">
-            <div className="absolute -top-3 -left-3 bg-[#FFB74D] w-full h-full rounded-[2rem] -z-10 opacity-20"></div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
+          {/* Image */}
+          <div className="relative w-full">
+            <div className="absolute -top-4 -left-4 w-full h-full rounded-[2.5rem] bg-[#FFB74D]/20 -z-10"></div>
+
             <img
-              src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=800&q=80"
-              alt="School Campus"
-              className="rounded-[2rem] shadow-xl border-4 border-white w-full h-[400px] object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+              src={aboutUsImg}
+              alt={t("about.intro.imageAlt")}
+              className="w-full h-[420px] object-cover rounded-[2.5rem] shadow-xl border-8 border-white"
             />
-            {/* Original Red Badge */}
-            <div className="absolute -bottom-6 -right-6 bg-[#FF5E5E] text-white p-6 rounded-full w-32 h-32 flex flex-col justify-center items-center font-bold text-center border-4 border-white rotate-12 shadow-lg">
-              <span className="text-2xl">2025</span>
-              <span className="text-xs uppercase">Est. Year</span>
+
+            {/* Badge */}
+            <div className="absolute -bottom-6 -right-6 bg-[#FF5E5E] text-white px-6 py-5 rounded-full text-center border-4 border-white shadow-lg rotate-6">
+              <div className="text-2xl font-black">
+                {t("about.intro.establishedYear")}
+              </div>
+              <div className="text-xs font-bold uppercase tracking-wider">
+                {t("about.intro.establishedLabel")}
+              </div>
             </div>
           </div>
 
-          {/* Text Side - Professional & Readable */}
-          <div className="lg:w-1/2 text-left space-y-6">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#673AB7] leading-tight">
-              Welcome to the <br/> New Era of Excellence
+          {/* Text */}
+          <div className="space-y-6">
+            <h2 className="text-3xl md:text-5xl font-black text-[#673AB7] leading-tight">
+              {t("about.intro.titleLine1")} <br />
+              {t("about.intro.titleLine2")}
             </h2>
-            <div className="space-y-4 text-gray-600 text-lg leading-relaxed">
-              <p>
-                <strong className="text-slate-900">Young Achievers English Medium School</strong> is a newly established educational institution launched in 2025. Located in Gram Patna Tamoli, District Panna, we provide a modern learning environment for children from <strong>Nursery to Class 8</strong>.
-              </p>
-              <p>
-                Our school is built on the philosophy of discipline, safety, and concept-based education. We aim to make quality English-medium education accessible to every child in the region.
-              </p>
-            </div>
-            <div className="flex items-center gap-3 text-[#4FC3F7] font-bold">
-              <span className="text-2xl">✔</span>
-              <span>NCERT Based English Medium Curriculum</span>
+
+            <p className="text-gray-600 text-lg leading-relaxed">
+              <span className="font-black text-slate-900">
+                {t("about.intro.p1BoldName")}
+              </span>{" "}
+              {t("about.intro.p1Text1")}{" "}
+              <span className="font-black">{t("about.intro.p1YearBold")}</span>
+              {t("about.intro.p1Text2")}{" "}
+              <span className="font-semibold">
+                {t("about.intro.p1LocationBold")}
+              </span>
+              {t("about.intro.p1Text3")}{" "}
+              <span className="font-black">{t("about.intro.p1ClassBold")}</span>
+              {t("about.intro.p1Text4")}
+            </p>
+
+            <p className="text-gray-600 text-lg leading-relaxed">
+              {t("about.intro.p2Text1")}{" "}
+              <span className="font-black">{t("about.intro.p2DisciplineBold")}</span>{" "}
+              {t("about.intro.p2Text2")}{" "}
+              <span className="font-black">{t("about.intro.p2ConceptBold")}</span>
+              {t("about.intro.p2Text3")}
+            </p>
+
+            <div className="flex flex-wrap gap-3 pt-2">
+              {chips.map((item, idx) => (
+                <span
+                  key={idx}
+                  className="px-5 py-3 rounded-full bg-gray-100 font-bold"
+                >
+                  {item}
+                </span>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
-      {/* 3. KEY FEATURES GRID - Original Vibrant Colors */}
+      {/* ================= MISSION / VISION ================= */}
+      <section className="bg-gray-50 py-20">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-14">
+            <h2 className="text-4xl md:text-5xl font-black text-[#673AB7]">
+              {t("about.missionVision.title")}
+            </h2>
+            <p className="mt-4 text-gray-600 text-lg">
+              {t("about.missionVision.subtitle")}
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="bg-white rounded-3xl p-10 shadow hover:shadow-xl transition border-t-8 border-[#4FC3F7]">
+              <div className="text-4xl mb-4">🎯</div>
+              <h3 className="text-2xl font-black text-[#4FC3F7] mb-4">
+                {t("about.missionVision.missionTitle")}
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                {t("about.missionVision.missionDesc")}
+              </p>
+            </div>
+
+            <div className="bg-white rounded-3xl p-10 shadow hover:shadow-xl transition border-t-8 border-[#FF5E5E]">
+              <div className="text-4xl mb-4">🌟</div>
+              <h3 className="text-2xl font-black text-[#FF5E5E] mb-4">
+                {t("about.missionVision.visionTitle")}
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                {t("about.missionVision.visionDesc")}
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ================= JOURNEY TIMELINE ================= */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-14">
+            <h2 className="text-4xl md:text-5xl font-black text-[#673AB7]">
+              {t("about.journey.title")}
+            </h2>
+            <p className="mt-4 text-gray-600 text-lg">
+              {t("about.journey.subtitle")}
+            </p>
+          </div>
+
+          <div className="max-w-4xl mx-auto space-y-8">
+            {journeySteps.map((step, idx) => (
+              <div key={idx} className="flex gap-5">
+                <div
+                  className={`w-12 h-12 flex items-center justify-center rounded-full text-white font-black ${
+                    idx === 0
+                      ? "bg-[#673AB7]"
+                      : idx === 1
+                      ? "bg-[#4FC3F7]"
+                      : "bg-[#FFB74D]"
+                  }`}
+                >
+                  {idx + 1}
+                </div>
+                <div className="bg-gray-50 p-7 rounded-3xl border w-full shadow-sm">
+                  <h4 className="font-black text-lg text-slate-800">
+                    {step.title}
+                  </h4>
+                  <p className="text-gray-600 mt-2">{step.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ================= KEY FEATURES ================= */}
       <section className="bg-slate-50 py-20">
         <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#673AB7]">Why Choose Us?</h2>
-            <div className="w-20 h-1.5 bg-[#FFB74D] mx-auto mt-4 rounded-full"></div>
+          <div className="text-center mb-14">
+            <h2 className="text-4xl md:text-5xl font-black text-[#673AB7]">
+              {t("about.features.title")}
+            </h2>
+            <div className="w-24 h-1.5 bg-[#FFB74D] mx-auto mt-5 rounded-full"></div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Feature 1 - Cyan */}
-            <div className="bg-white p-8 rounded-[2rem] shadow-sm border-t-8 border-[#4FC3F7] hover:shadow-xl transition-shadow">
-              <h4 className="font-bold text-xl mb-3 text-[#4FC3F7]">Modern Curriculum</h4>
-              <p className="text-gray-500 text-sm leading-relaxed">NCERT based English Medium pattern with a focus on conceptual understanding instead of rote learning.</p>
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
+            {features.map((item, idx) => (
+              <div
+                key={idx}
+                className="bg-white p-8 rounded-[2rem] shadow-sm hover:shadow-xl transition border-t-8"
+                style={{ borderTopColor: item.color }}
+              >
+                <div className="text-4xl">{item.icon}</div>
+                <h4
+                  className="font-black text-xl mt-4 mb-3"
+                  style={{ color: item.color }}
+                >
+                  {item.title}
+                </h4>
+                <p className="text-gray-500 text-sm leading-relaxed">
+                  {item.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-            {/* Feature 2 - Red */}
-            <div className="bg-white p-8 rounded-[2rem] shadow-sm border-t-8 border-[#FF5E5E] hover:shadow-xl transition-shadow">
-              <h4 className="font-bold text-xl mb-3 text-[#FF5E5E]">Safe & Secure</h4>
-              <p className="text-gray-500 text-sm leading-relaxed">A child-friendly campus with proper supervision and a disciplined atmosphere for every student.</p>
+      {/* ================= STATS ================= */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div className="p-6 rounded-3xl border shadow-sm hover:shadow-lg transition">
+              <h3 className="text-5xl font-black text-[#FF5E5E]">2025</h3>
+              <p className="text-slate-500 text-sm mt-2 uppercase font-black tracking-widest">
+                {t("about.stats.estYearLabel")}
+              </p>
             </div>
-
-            {/* Feature 3 - Orange */}
-            <div className="bg-white p-8 rounded-[2rem] shadow-sm border-t-8 border-[#FFB74D] hover:shadow-xl transition-shadow">
-              <h4 className="font-bold text-xl mb-3 text-[#FFB74D]">Expert Faculty</h4>
-              <p className="text-gray-500 text-sm leading-relaxed">A team of qualified teachers dedicated to the overall personality development of every child.</p>
+            <div className="p-6 rounded-3xl border shadow-sm hover:shadow-lg transition">
+              <h3 className="text-5xl font-black text-[#4FC3F7]">15+</h3>
+              <p className="text-slate-500 text-sm mt-2 uppercase font-black tracking-widest">
+                {t("about.stats.teachersLabel")}
+              </p>
             </div>
-
-            {/* Feature 4 - Purple */}
-            <div className="bg-white p-8 rounded-[2rem] shadow-sm border-t-8 border-[#673AB7] hover:shadow-xl transition-shadow">
-              <h4 className="font-bold text-xl mb-3 text-[#673AB7]">Holistic Growth</h4>
-              <p className="text-gray-500 text-sm leading-relaxed">Focus on moral values, sports, and activity-based learning to build confidence in children.</p>
+            <div className="p-6 rounded-3xl border shadow-sm hover:shadow-lg transition">
+              <h3 className="text-5xl font-black text-[#FFB74D]">8+</h3>
+              <p className="text-slate-500 text-sm mt-2 uppercase font-black tracking-widest">
+                {t("about.stats.gradesLabel")}
+              </p>
             </div>
-
-            {/* Feature 5 - Cyan Dark */}
-            <div className="bg-white p-8 rounded-[2rem] shadow-sm border-t-8 border-[#00BCD4] hover:shadow-xl transition-shadow">
-              <h4 className="font-bold text-xl mb-3 text-[#00BCD4]">Smart Classes</h4>
-              <p className="text-gray-500 text-sm leading-relaxed">New infrastructure designed in 2025 to provide the best facilities for digital and smart learning.</p>
-            </div>
-
-            {/* Feature 6 - Gray/Neutral */}
-            <div className="bg-white p-8 rounded-[2rem] shadow-sm border-t-8 border-gray-400 hover:shadow-xl transition-shadow">
-              <h4 className="font-bold text-xl mb-3 text-gray-700">Admission Open</h4>
-              <p className="text-gray-500 text-sm leading-relaxed">Accepting inquiries for session 2025-26 from Nursery to Class 8. Visit us for a campus tour.</p>
+            <div className="p-6 rounded-3xl border shadow-sm hover:shadow-lg transition">
+              <h3 className="text-5xl font-black text-[#673AB7]">100%</h3>
+              <p className="text-slate-500 text-sm mt-2 uppercase font-black tracking-widest">
+                {t("about.stats.dedicationLabel")}
+              </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 4. STATS SUMMARY - Original Colors */}
-      <section className="py-20">
-        <div className="container mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-          <div>
-            <h3 className="text-5xl font-bold text-[#FF5E5E]">2025</h3>
-            <p className="text-slate-500 text-sm mt-2 uppercase font-bold tracking-widest">Est. Year</p>
-          </div>
-          <div>
-            <h3 className="text-5xl font-bold text-[#4FC3F7]">30+</h3>
-            <p className="text-slate-500 text-sm mt-2 uppercase font-bold tracking-widest">Teachers</p>
-          </div>
-          <div>
-            <h3 className="text-5xl font-bold text-[#FFB74D]">8+</h3>
-            <p className="text-slate-500 text-sm mt-2 uppercase font-bold tracking-widest">Grade Levels</p>
-          </div>
-          <div>
-            <h3 className="text-5xl font-bold text-[#673AB7]">100%</h3>
-            <p className="text-slate-500 text-sm mt-2 uppercase font-bold tracking-widest">Dedication</p>
-          </div>
-        </div>
-      </section>
-
-      {/* 5. QUICK CONTACT INFO - Purple Theme */}
+      {/* ================= FINAL CTA ================= */}
       <section className="bg-[#673AB7] py-16 text-white text-center">
         <div className="container mx-auto px-6">
-          <h2 className="text-3xl font-bold mb-4 uppercase tracking-wide">Visit Young Achievers Today</h2>
-          <p className="mb-10 opacity-90 font-medium">Gram Patna Tamoli, District Panna, Madhya Pradesh - 488333</p>
+          <h2 className="text-3xl md:text-4xl font-black mb-4">
+            {t("about.finalCta.title")}
+          </h2>
+          <p className="mb-10 opacity-90 font-medium">
+            {t("about.finalCta.address")}
+          </p>
+
           <div className="flex flex-col sm:flex-row justify-center gap-6">
-            <a href="tel:+918770698713" className="bg-[#FF5E5E] text-white px-10 py-4 rounded-full font-bold shadow-lg hover:bg-red-600 transition uppercase tracking-wider text-sm">
-              Call: +91 87706 98713
+            <a
+              href="tel:+918770698713"
+              className="bg-[#FF5E5E] px-10 py-4 rounded-full font-black shadow-lg hover:bg-red-600 transition uppercase tracking-wider text-sm"
+            >
+              {t("about.finalCta.callBtn")}
             </a>
-            <a href="mailto:info@youngachievers.com" className="bg-[#4FC3F7] text-white px-10 py-4 rounded-full font-bold shadow-lg hover:bg-cyan-500 transition uppercase tracking-wider text-sm">
-              Email Us
+            <a
+              href="mailto:info@youngachievers.com"
+              className="bg-[#4FC3F7] px-10 py-4 rounded-full font-black shadow-lg hover:bg-cyan-500 transition uppercase tracking-wider text-sm"
+            >
+              {t("about.finalCta.emailBtn")}
             </a>
           </div>
         </div>
       </section>
-
     </div>
   );
 };

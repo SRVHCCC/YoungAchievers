@@ -1,16 +1,112 @@
-# React + Vite
+# 🏫 Young Achievers English Medium School - Official Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Young Achievers English Medium School** (Gram Patna Tamoli, District Panna, Madhya Pradesh) ki official website ek modern, fast aur mobile-friendly school portal hai.  
+Is website ka main aim parents aur students ko school ki complete information provide karna aur **Admission Inquiry + Contact Inquiry** ko easy banana hai.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🌟 About the School
 
-## React Compiler
+### 🏫 School Name
+**Young Achievers English Medium School**
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 📍 Location
+Gram Patna Tamoli, District Panna, Madhya Pradesh (M.P.)
 
-## Expanding the ESLint configuration
+### 🎯 Our Vision
+Har student ko quality education dena jo **strong academics, discipline, confidence aur overall personality development** par based ho.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 🧠 Our Mission
+- Nursery se Class 8 tak strong learning foundation
+- English medium education with concept clarity
+- Discipline + safe environment
+- Activity-based learning (especially pre-primary)
+- Strong reading habit (library) and physical fitness (playground)
+
+### ✅ Key Focus Areas
+- 📚 Strong Academics (English, Maths, Science)
+- 🧠 Concept-based learning (Ratta system nahi)
+- 🗣 Communication Skills (Reading + Speaking)
+- 🎯 Discipline & Moral Values
+- ⚽ Physical Fitness & Sports
+- 📖 Reading habit & library culture
+- 💻 Digital literacy
+
+---
+
+## 🌍 Project Overview (Website Purpose)
+
+Ye website school ke liye ek professional online presence create karti hai jisme:
+
+✅ Parents ko school ke academics, facilities aur programs ka full overview milta hai  
+✅ Students ke liye campus life (gallery, playground, library etc.) showcase hota hai  
+✅ Admission inquiry aur contact inquiry forms ke through easily details submit ki ja sakti hain  
+✅ English + Hindi language support available hai  
+
+---
+
+## ✅ Features
+
+### 🎨 UI / Design
+✅ Modern & Premium UI (TailwindCSS)  
+✅ Fully Responsive (Mobile + Tablet + Desktop)  
+✅ Smooth animations & clean layout  
+✅ Sticky header + CTA buttons  
+✅ Professional Footer  
+
+### 📌 Functional Features
+✅ Multi-language support (English + Hindi) using `i18next`  
+✅ Contact Inquiry Form (Email sending)  
+✅ Admission Inquiry Form (Email sending)  
+✅ School Gallery with Lightbox + Tabs Filter  
+✅ Academics pages for each category  
+✅ Campus pages like Playground / Library / Classrooms  
+✅ Reusable components & clean folder structure  
+
+---
+
+## 📄 Website Pages
+
+### ✅ Main Pages
+- Home
+- About Us
+- Gallery
+- Contact Us
+
+### ✅ Academics Pages
+- Pre-Primary Program (Nursery – UKG) → Play & Learn
+- Primary Foundation (Class 1 – 5)
+- Middle School Program (Class 6 – 8)
+
+### ✅ Campus Pages
+- Playground
+- Library
+- Classrooms
+
+### ✅ Admissions
+- Admission Inquiry Form (Nursery to Class 8)
+
+---
+
+## ⚙️ Tech Stack
+
+### ✅ Frontend
+- **React.js**
+- **React Router DOM**
+- **Tailwind CSS**
+- **i18next** (English + Hindi)
+- **react-hot-toast** (Notifications)
+- **EmailJS** (Frontend email sending)
+
+### ✅ Backend (Optional)
+If backend is needed in future:
+- Node.js
+- Express.js
+- Nodemailer
+- Dotenv
+- CORS
+
+---
+
+## 📂 Project Folder Structure
+

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Toaster } from "react-hot-toast";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './component/Header';
 import Footer from './component/Footer';
@@ -27,7 +28,7 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/contact" element={<ContactPage />} />
-            <Route path="/book-now" element={<BookNow />} />
+            
             <Route path="/admissions" element={<AdmissionInquiry />} />
             <Route path="/gallery" element={<GalleryPage />} />
             <Route path="/classrooms" element={<ClassroomsPage />} />

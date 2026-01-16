@@ -1,104 +1,391 @@
-import React from 'react';
+import React, { useMemo, useState } from "react";
+import { useTranslation } from "react-i18next";
+import API_BASE_URL from "../config/config";
 
 const ContactPage = () => {
+  const { t } = useTranslation();
+
+  // FAQ data
+  const faqs = useMemo(
+    () => t("contactPage.faq.items", { returnObjects: true }) || [],
+    [t]
+  );
+
+  const classOptions = useMemo(
+    () => t("contactPage.form.classOptions", { returnObjects: true }) || [],
+    [t]
+  );
+
+  const [openFAQ, setOpenFAQ] = useState(0);
+
+  // ✅ Form state
+  const [form, setForm] = useState({
+    childName: "",
+    phone: "",
+    admissionClass: classOptions?.[0] || "Nursery - UKG",
+    message: ""
+  });
+
+  // ✅ UI state
+  const [loading, setLoading] = useState(false);
+  const [successMsg, setSuccessMsg] = useState("");
+  const [errorMsg, setErrorMsg] = useState("");
+
+  // ✅ Change handler
+  const onChange = (e) => {
+    const { name, value } = e.target;
+    setForm((prev) => ({ ...prev, [name]: value }));
+  };
+
+  // ✅ validate phone (10 digits)
+  const validatePhone = (phone) => {
+    const cleaned = phone.replace(/\D/g, "");
+    return cleaned.length === 10;
+  };
+
+  // ✅ Submit handler
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setSuccessMsg("");
+    setErrorMsg("");
+
+    if (!form.childName.trim()) {
+      setErrorMsg(t("contactPage.form.errors.childNameRequired"));
+      return;
+    }
+
+    if (!form.phone.trim() || !validatePhone(form.phone)) {
+      setErrorMsg(t("contactPage.form.errors.phoneInvalid"));
+      return;
+    }
+
+    if (!form.message.trim() || form.message.trim().length < 5) {
+      setErrorMsg(t("contactPage.form.errors.messageMin"));
+      return;
+    }
+
+    try {
+      setLoading(true);
+
+      const payload = {
+        childName: form.childName.trim(),
+        phone: form.phone.replace(/\D/g, ""),
+        admissionClass: form.admissionClass,
+        message: form.message.trim(),
+        createdAt: new Date().toISOString()
+      };
+
+      const res = await fetch(`${API_BASE_URL}/api/contact-inquiry`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload)
+      });
+
+      const data = await res.json().catch(() => ({}));
+
+      if (!res.ok) {
+        throw new Error(data?.message || t("contactPage.form.errors.somethingWrong"));
+      }
+
+      setSuccessMsg(t("contactPage.form.successMsg"));
+
+      // ✅ reset
+      setForm({
+        childName: "",
+        phone: "",
+        admissionClass: classOptions?.[0] || "Nursery - UKG",
+        message: ""
+      });
+    } catch (err) {
+      setErrorMsg(err.message || t("contactPage.form.errors.failedToSend"));
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const cards = t("contactPage.cards", { returnObjects: true });
+  const mapSrc = t("contactPage.map.src");
+
   return (
     <div className="font-sans bg-white text-slate-800">
-      
-      {/* 1. SIMPLE HEADER BANNER */}
-      <section className="bg-[#FFB74D] py-16 text-center text-white">
-        <div className="container mx-auto px-6">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Contact Us</h1>
-          <p className="text-lg opacity-90">
-            Gram Patna Tamoli, District Panna (M.P.)
-          </p>
+      {/* ================= HEADER BANNER ================= */}
+      <section className="relative overflow-hidden">
+        <div className="bg-gradient-to-r from-[#673AB7] via-[#4FC3F7] to-[#FFB74D] py-20 text-center text-white">
+          <div className="container mx-auto px-6">
+            <h1 className="text-4xl md:text-6xl font-black mb-4">
+              {t("contactPage.header.title")}
+            </h1>
+            <p className="text-lg md:text-xl opacity-90 font-semibold">
+              {t("contactPage.header.subtitle")}
+            </p>
+          </div>
         </div>
+        <div className="h-10 bg-white rounded-t-[40px] -mt-8"></div>
       </section>
 
-      {/* 2. MAIN CONTENT SECTION */}
+      {/* ================= MAIN CONTENT ================= */}
       <section className="container mx-auto px-6 py-16">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          
-          {/* LEFT: SIMPLE CONTACT FORM */}
-          <div className="bg-slate-50 p-8 rounded-2xl border border-slate-100">
-            <h2 className="text-2xl font-bold mb-6 text-[#673AB7]">Send an Inquiry</h2>
-            <form className="space-y-5" onSubmit={(e) => e.preventDefault()}>
-              <div>
-                <label className="block text-sm font-bold mb-2">Child's Name</label>
-                <input type="text" placeholder="Full Name" className="w-full p-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-[#4FC3F7] outline-none" />
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-14">
+          {/* LEFT SIDE: CONTACT FORM */}
+          <div
+            id="contact-form"
+            className="bg-slate-50 p-10 rounded-3xl border border-slate-100 shadow-lg"
+          >
+            <h2 className="text-3xl font-black mb-3 text-[#673AB7]">
+              {t("contactPage.form.title")}
+            </h2>
+            <p className="text-gray-600 mb-8">
+              {t("contactPage.form.subtitle")}
+            </p>
+
+            {/* ✅ Success/Error */}
+            {(successMsg || errorMsg) && (
+              <div
+                className={`mb-6 rounded-2xl p-4 text-sm font-semibold border ${
+                  successMsg
+                    ? "bg-green-50 border-green-200 text-green-700"
+                    : "bg-red-50 border-red-200 text-red-700"
+                }`}
+              >
+                {successMsg || errorMsg}
               </div>
+            )}
+
+            <form className="space-y-5" onSubmit={handleSubmit}>
               <div>
-                <label className="block text-sm font-bold mb-2">Mobile Number</label>
-                <input type="tel" placeholder="+91 00000 00000" className="w-full p-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-[#4FC3F7] outline-none" />
+                <label className="block text-sm font-black mb-2">
+                  {t("contactPage.form.labels.childName")}
+                </label>
+                <input
+                  type="text"
+                  name="childName"
+                  value={form.childName}
+                  onChange={onChange}
+                  placeholder={t("contactPage.form.placeholders.childName")}
+                  className="w-full p-4 rounded-xl border border-slate-300 focus:ring-2 focus:ring-[#4FC3F7] outline-none bg-white"
+                  required
+                />
               </div>
+
               <div>
-                <label className="block text-sm font-bold mb-2">Class for Admission</label>
-                <select className="w-full p-3 rounded-lg border border-slate-300 outline-none">
-                  <option>Nursery - UKG</option>
-                  <option>Class 1 - 5</option>
-                  <option>Class 6 - 8</option>
+                <label className="block text-sm font-black mb-2">
+                  {t("contactPage.form.labels.phone")}
+                </label>
+                <input
+                  type="tel"
+                  name="phone"
+                  value={form.phone}
+                  onChange={onChange}
+                  placeholder={t("contactPage.form.placeholders.phone")}
+                  className="w-full p-4 rounded-xl border border-slate-300 focus:ring-2 focus:ring-[#4FC3F7] outline-none bg-white"
+                  required
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-black mb-2">
+                  {t("contactPage.form.labels.admissionClass")}
+                </label>
+                <select
+                  name="admissionClass"
+                  value={form.admissionClass}
+                  onChange={onChange}
+                  className="w-full p-4 rounded-xl border border-slate-300 outline-none bg-white"
+                >
+                  {classOptions.map((opt, idx) => (
+                    <option key={idx}>{opt}</option>
+                  ))}
                 </select>
               </div>
+
               <div>
-                <label className="block text-sm font-bold mb-2">Your Message</label>
-                <textarea rows="4" placeholder="How can we help you?" className="w-full p-3 rounded-lg border border-slate-300 outline-none"></textarea>
+                <label className="block text-sm font-black mb-2">
+                  {t("contactPage.form.labels.message")}
+                </label>
+                <textarea
+                  rows="5"
+                  name="message"
+                  value={form.message}
+                  onChange={onChange}
+                  placeholder={t("contactPage.form.placeholders.message")}
+                  className="w-full p-4 rounded-xl border border-slate-300 outline-none bg-white"
+                  required
+                ></textarea>
               </div>
-              <button className="w-full bg-[#FF5E5E] text-white font-bold py-3 rounded-lg hover:bg-red-600 transition shadow-md uppercase tracking-wider">
-                Send Message
+
+              {/* ✅ WORKING BUTTON */}
+              <button
+                type="submit"
+                disabled={loading}
+                className={`w-full text-white font-black py-4 rounded-xl transition shadow-md uppercase tracking-wider
+                  ${
+                    loading
+                      ? "bg-gray-400 cursor-not-allowed"
+                      : "bg-[#FF5E5E] hover:bg-red-600"
+                  }
+                `}
+              >
+                {loading ? t("contactPage.form.btnSending") : t("contactPage.form.btnSend")}
               </button>
+
+              <p className="text-xs text-gray-500 text-center mt-2">
+                {t("contactPage.form.privacyNote")}
+              </p>
             </form>
           </div>
 
-          {/* RIGHT: ADDRESS & TIMING */}
-          <div className="space-y-8">
-            
-            {/* SCHOOL DETAILS */}
-            <div className="p-6 bg-white border-2 border-slate-100 rounded-2xl">
-              <h3 className="text-xl font-bold mb-4 text-[#4FC3F7]">Our Location</h3>
+          {/* RIGHT SIDE: DETAILS + FAQ */}
+          <div className="space-y-10">
+            {/* QUICK CONTACT CARDS */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {/* Address */}
+              <div className="p-6 rounded-3xl border shadow-sm hover:shadow-lg transition">
+                <div className="text-3xl mb-3">{cards.address.icon}</div>
+                <h3
+                  className="font-black text-lg mb-1"
+                  style={{ color: cards.address.color }}
+                >
+                  {cards.address.title}
+                </h3>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  {cards.address.text1} <br />
+                  {cards.address.text2}
+                </p>
+              </div>
+
+              {/* Call */}
+              <div className="p-6 rounded-3xl border shadow-sm hover:shadow-lg transition">
+                <div className="text-3xl mb-3">{cards.call.icon}</div>
+                <h3
+                  className="font-black text-lg mb-1"
+                  style={{ color: cards.call.color }}
+                >
+                  {cards.call.title}
+                </h3>
+                <a
+                  href="tel:+918770698713"
+                  className="font-black text-gray-800 hover:text-[#FF5E5E] transition"
+                >
+                  {cards.call.phone}
+                </a>
+                <p className="text-gray-600 text-sm mt-1">{cards.call.note}</p>
+              </div>
+
+              {/* Email */}
+              <div className="p-6 rounded-3xl border shadow-sm hover:shadow-lg transition">
+                <div className="text-3xl mb-3">{cards.email.icon}</div>
+                <h3
+                  className="font-black text-lg mb-1"
+                  style={{ color: cards.email.color }}
+                >
+                  {cards.email.title}
+                </h3>
+                <p className="text-gray-700 font-semibold">{cards.email.email}</p>
+                <p className="text-gray-600 text-sm mt-1">{cards.email.note}</p>
+              </div>
+
+              {/* Timings */}
+              <div className="p-6 rounded-3xl border shadow-sm hover:shadow-lg transition">
+                <div className="text-3xl mb-3">{cards.timings.icon}</div>
+                <h3
+                  className="font-black text-lg mb-1"
+                  style={{ color: cards.timings.color }}
+                >
+                  {cards.timings.title}
+                </h3>
+                <p className="text-sm text-gray-700 font-semibold">
+                  {cards.timings.line1}
+                </p>
+                <p className="text-sm text-gray-700 font-semibold">
+                  {cards.timings.line2}
+                </p>
+                <p className="text-sm font-black text-red-500 mt-1">
+                  {cards.timings.line3}
+                </p>
+              </div>
+            </div>
+
+            {/* MAP */}
+            <div className="rounded-3xl overflow-hidden border shadow-sm">
+              <iframe
+                title={t("contactPage.map.title")}
+                src={mapSrc}
+                width="100%"
+                height="300"
+                style={{ border: 0 }}
+                allowFullScreen=""
+                loading="lazy"
+              ></iframe>
+            </div>
+
+            {/* FAQ SECTION */}
+            <div className="bg-white border rounded-3xl p-8 shadow-sm">
+              <h2 className="text-3xl font-black text-[#673AB7]">
+                {t("contactPage.faq.title")}
+              </h2>
+              <p className="text-gray-600 mt-2 mb-6">
+                {t("contactPage.faq.subtitle")}
+              </p>
+
               <div className="space-y-4">
-                <p className="flex items-start gap-3">
-                  <span className="text-xl">📍</span>
-                  <span>Gram Patna Tamoli, District Panna, <br />Madhya Pradesh - 488333</span>
-                </p>
-                <p className="flex items-center gap-3">
-                  <span className="text-xl">📞</span>
-                  <a href="tel:+918770698713" className="font-bold hover:text-[#FF5E5E] transition">+91 87706 98713</a>
-                </p>
-                <p className="flex items-center gap-3">
-                  <span className="text-xl">✉️</span>
-                  <span>info@youngachievers.com</span>
-                </p>
+                {faqs.map((item, index) => {
+                  const isOpen = openFAQ === index;
+                  return (
+                    <div
+                      key={index}
+                      className="border rounded-2xl p-5 hover:shadow-md transition"
+                    >
+                      <button
+                        type="button"
+                        className="w-full flex items-center justify-between text-left"
+                        onClick={() => setOpenFAQ(isOpen ? -1 : index)}
+                      >
+                        <h3 className="font-black text-gray-800 text-base md:text-lg">
+                          {item.q}
+                        </h3>
+                        <span className="text-2xl font-black text-[#4FC3F7]">
+                          {isOpen ? "−" : "+"}
+                        </span>
+                      </button>
+
+                      {isOpen && (
+                        <p className="mt-4 text-gray-600 leading-relaxed text-sm md:text-base">
+                          {item.a}
+                        </p>
+                      )}
+                    </div>
+                  );
+                })}
               </div>
             </div>
-
-            {/* TIMINGS */}
-            <div className="p-6 bg-white border-2 border-slate-100 rounded-2xl">
-              <h3 className="text-xl font-bold mb-4 text-[#673AB7]">Office Timings</h3>
-              <div className="space-y-2">
-                <div className="flex justify-between border-b pb-2">
-                  <span className="text-gray-600">Monday – Friday:</span>
-                  <span className="font-bold">8:00 AM – 2:00 PM</span>
-                </div>
-                <div className="flex justify-between border-b pb-2">
-                  <span className="text-gray-600">Saturday:</span>
-                  <span className="font-bold">8:00 AM – 12:00 PM</span>
-                </div>
-                <div className="flex justify-between text-red-500 pt-2">
-                  <span>Sunday:</span>
-                  <span className="font-bold">CLOSED</span>
-                </div>
-              </div>
-            </div>
-
-            {/* MAP VIEW */}
-            <div className="h-64 bg-slate-100 rounded-2xl overflow-hidden border">
-              <iframe 
-                title="School Location"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14551.46823337351!2d80.19!3d24.72!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjTCsDQzJzEyLjAiTiA4MMKwMTEnMjQuMCJF!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
-                width="100%" height="100%" style={{ border: 0 }} allowFullScreen="" loading="lazy">
-              </iframe>
-            </div>
-
           </div>
+        </div>
+      </section>
+
+      {/* ================= FINAL CTA ================= */}
+      <section className="bg-[#673AB7] py-16 text-center text-white px-6">
+        <h2 className="text-3xl md:text-4xl font-black mb-5">
+          {t("contactPage.finalCta.title")}
+        </h2>
+        <p className="max-w-2xl mx-auto text-white/90 mb-8">
+          {t("contactPage.finalCta.subtitle")}
+        </p>
+
+        <div className="flex flex-wrap justify-center gap-4">
+          <a
+            href="tel:+918770698713"
+            className="bg-[#00BCD4] px-10 py-4 rounded-full font-black text-lg hover:bg-white hover:text-[#00BCD4] transition inline-block shadow-lg"
+          >
+            {t("contactPage.finalCta.btnCall")}
+          </a>
+
+          {/* ✅ Scroll to form */}
+          <a
+            href="#contact-form"
+            className="bg-white/10 border border-white/25 px-10 py-4 rounded-full font-black text-lg hover:bg-white hover:text-[#673AB7] transition inline-block shadow-lg"
+          >
+            {t("contactPage.finalCta.btnSend")}
+          </a>
         </div>
       </section>
     </div>

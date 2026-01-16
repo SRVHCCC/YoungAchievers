@@ -1,129 +1,268 @@
-import React from "react";
+import React, { useMemo } from "react";
+import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
-const playLearnModules = [
-  {
-    title: "Sensory Exploration",
-    method: "Tactile Learning",
-    description: "Through clay modeling, sand play, and water activities, children explore different textures. This is essential for sensory processing and fine motor skill development.",
-    image: "https://images.unsplash.com/photo-1587654780291-39c9404d746b?auto=format&fit=crop&w=800&q=80",
-    tag: "Motor Skills",
-    color: "bg-[#FF5E5E]" // Red
-  },
-  {
-    title: "Visual Recognition",
-    method: "Observation-Based Learning",
-    description: "Using colorful flashcards and 3D objects, we sharpen visual memory. Children learn to identify shapes, colors, and patterns in a fun, pressure-free way.",
-    image: "https://images.unsplash.com/photo-1560421683-6856ea585c78?auto=format&fit=crop&w=800&q=80",
-    tag: "Visual Memory",
-    color: "bg-[#FFB74D]" // Orange
-  },
-  {
-    title: "Creative Expression",
-    method: "Art & Storytelling",
-    description: "Stories and puppet shows ignite imagination. We encourage children to express themselves through finger painting, drawing, and role-playing.",
-    image: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=800&q=80",
-    tag: "Imagination",
-    color: "bg-[#673AB7]" // Purple
-  },
-  {
-    title: "Phonics & Language",
-    method: "Auditory Discovery",
-    description: "Rhymes, music, and phonics sounds help children recognize language patterns. This builds a strong foundation for future reading and speaking skills.",
-    image: "https://images.unsplash.com/photo-1546410531-bb4caa6b424d?auto=format&fit=crop&w=800&q=80",
-    tag: "Language Prep",
-    color: "bg-[#00BCD4]" // Cyan
-  },
-  {
-    title: "Social Interaction",
-    method: "Value-Based Play",
-    description: "Group games and shared activities teach children the importance of sharing, teamwork, and basic manners in a caring, social environment.",
-    image: "https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=800&q=80",
-    tag: "Social Skills",
-    color: "bg-[#4DD0E1]" // Light Cyan
-  }
-];
+// Importing local assets
+import sensoryExploration from "../assets/img/SensoryExploration.png";
+import visualRecognition from "../assets/img/VisualRecognition.png";
+import creativeExpression from "../assets/img/CreativeExpression.png";
+import phonicsLanguage from "../assets/img/PhonicsLanguage.png";
+import socialInteraction from "../assets/img/SocialInteraction.png";
 
 const PlayAndLearnPage = () => {
+  const { t } = useTranslation();
+
+  // ✅ local images map (text json se, image yahi file se)
+  const imageMap = useMemo(
+    () => [sensoryExploration, visualRecognition, creativeExpression, phonicsLanguage, socialInteraction],
+    []
+  );
+
+  const heroTags = useMemo(
+    () => t("playAndLearn.hero.tags", { returnObjects: true }) || [],
+    [t]
+  );
+
+  const miniStats = useMemo(
+    () => t("playAndLearn.hero.miniStats", { returnObjects: true }) || [],
+    [t]
+  );
+
+  const playLearnModules = useMemo(() => {
+    const modules = t("playAndLearn.modules", { returnObjects: true }) || [];
+    // ✅ image attach by index (UI same)
+    return modules.map((m, idx) => ({
+      ...m,
+      image: imageMap[idx] || sensoryExploration,
+    }));
+  }, [t, imageMap]);
+
+  const finalPoints = useMemo(
+    () => t("playAndLearn.finalCta.points", { returnObjects: true }) || [],
+    [t]
+  );
+
   return (
     <div className="font-sans text-slate-800 bg-white">
+      {/* ================= HERO ================= */}
+      <section className="relative overflow-hidden">
+        <div className="bg-gradient-to-r from-[#673AB7] via-[#4FC3F7] to-[#FFB74D] py-20 md:py-28 text-white">
+          <div className="container mx-auto px-6 relative z-10 text-center">
+            <div className="inline-flex flex-wrap justify-center gap-2 mb-6">
+              {heroTags.map((tag, idx) => (
+                <span
+                  key={idx}
+                  className="px-4 py-2 rounded-full bg-white/15 border border-white/20 text-xs font-black uppercase tracking-wider"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
 
-      {/* 1. COMPACT HERO SECTION (Matched to PrimaryFoundationPage) */}
-      <section className="bg-[#fdfcf8] py-12 md:py-16 text-center border-b border-stone-200 relative overflow-hidden">
-        <div className="container mx-auto px-6 relative z-10">
-          <h1 className="text-3xl md:text-5xl font-black mb-4 uppercase tracking-tight text-slate-900">
-            Nursery – UKG: <br className="hidden md:block" /> 
-            <span className="text-[#00BCD4]">Play & Learn</span>
-          </h1>
-          <p className="text-lg md:text-xl max-w-2xl mx-auto font-medium text-slate-500 leading-relaxed">
-            A joyful start where curiosity meets discovery. Our pre-primary wing 
-            focuses on learning through play to build confidence and creativity.
-          </p>
+            <h1 className="text-4xl md:text-6xl font-black leading-tight">
+              {t("playAndLearn.hero.title")}
+            </h1>
+
+            <p className="max-w-3xl mx-auto mt-6 text-lg md:text-xl opacity-90 font-medium leading-relaxed">
+              {t("playAndLearn.hero.subtitle")}
+            </p>
+
+            <div className="flex flex-wrap justify-center gap-4 mt-10">
+              <Link
+                to="/admissions"
+                className="bg-[#FF5E5E] hover:bg-[#ff3d3d] px-10 py-4 rounded-full font-black shadow-lg transition"
+              >
+                {t("playAndLearn.hero.btnApply")}
+              </Link>
+
+              <Link
+                to="/contact"
+                className="bg-white/95 hover:bg-white text-[#673AB7] px-10 py-4 rounded-full font-black shadow-lg transition"
+              >
+                {t("playAndLearn.hero.btnTalk")}
+              </Link>
+            </div>
+
+            {/* mini stats */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-12 max-w-4xl mx-auto">
+              {miniStats.map((s, idx) => (
+                <div
+                  key={idx}
+                  className="bg-white/10 border border-white/20 rounded-2xl p-5"
+                >
+                  <div className="text-2xl font-black">{s.value}</div>
+                  <div className="text-xs font-bold uppercase tracking-wider opacity-90">
+                    {s.label}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
-        <div className="absolute -top-10 -right-10 w-48 h-48 bg-[#4FC3F7]/10 rounded-full"></div>
-        <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-stone-100 rounded-full"></div>
+
+        {/* decorative blobs */}
+        <div className="absolute -top-20 -left-20 w-56 h-56 bg-white/15 rounded-full"></div>
+        <div className="absolute -bottom-20 -right-16 w-72 h-72 bg-black/10 rounded-full"></div>
+
+        {/* white wave */}
+        <div className="h-12 bg-white rounded-t-[45px] -mt-10"></div>
       </section>
 
-      {/* 2. LEARNING MODULES (Matched Photo-Story Style) */}
-      <section className="py-20 container mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-black text-slate-900">Our Pre-Primary Pillars</h2>
-          <div className="w-20 h-1.5 bg-[#FFB74D] mx-auto mt-4 rounded-full"></div>
-        </div>
+      {/* ================= SECTION TITLE ================= */}
+      <section className="container mx-auto px-6 pt-16 pb-6 text-center">
+        <h2 className="text-3xl md:text-5xl font-black text-slate-900">
+          {t("playAndLearn.sectionTitle.title")}
+        </h2>
+        <p className="text-gray-600 mt-4 max-w-2xl mx-auto text-lg">
+          {t("playAndLearn.sectionTitle.subtitle")}
+        </p>
+        <div className="w-24 h-1.5 bg-[#FFB74D] mx-auto mt-6 rounded-full"></div>
+      </section>
 
-        <div className="space-y-24 md:space-y-32">
+      {/* ================= MODULES ================= */}
+      <section className="py-14 container mx-auto px-6">
+        <div className="space-y-12 md:space-y-16">
           {playLearnModules.map((item, index) => (
-            <div key={index} className={`flex flex-col ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-10 md:gap-16`}>
-              
-              {/* Photo Side */}
-              <div className="md:w-1/2 relative group w-full">
-                <div className={`absolute -top-3 -left-3 ${item.color} w-full h-full rounded-[2rem] -z-10 opacity-20`}></div>
-                <img 
-                  src={item.image} 
-                  alt={item.title} 
-                  className="rounded-[2rem] shadow-xl border-4 border-white w-full h-[300px] md:h-[400px] object-cover transition-transform duration-500 group-hover:scale-[1.02]"
-                />
-                <div className={`absolute top-6 left-6 ${item.color} text-white px-5 py-1.5 rounded-full font-black shadow-lg text-xs uppercase tracking-widest`}>
-                  {item.tag}
+            <div
+              key={index}
+              className="rounded-[2.5rem] border shadow-sm hover:shadow-2xl transition overflow-hidden bg-white"
+            >
+              <div
+                className={`grid grid-cols-1 lg:grid-cols-2 ${
+                  index % 2 === 0 ? "" : "lg:[&>*:first-child]:order-2"
+                }`}
+              >
+                {/* Image Side */}
+                <div className="relative overflow-hidden">
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="w-full h-[280px] md:h-[420px] object-cover object-center transition-transform duration-700 hover:scale-110"
+                  />
+
+                  {/* Tag */}
+                  <div
+                    className="absolute top-6 left-6 text-white px-5 py-2 rounded-full font-black text-xs uppercase tracking-widest shadow-lg"
+                    style={{ backgroundColor: item.color }}
+                  >
+                    {item.tag}
+                  </div>
+
+                  {/* corner gradient overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent"></div>
+                </div>
+
+                {/* Content Side */}
+                <div className="p-10 md:p-12 flex flex-col justify-center">
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    <span
+                      className="px-4 py-2 rounded-full text-xs font-black uppercase tracking-wider"
+                      style={{
+                        backgroundColor: `${item.color}15`,
+                        color: item.color,
+                      }}
+                    >
+                      {item.method}
+                    </span>
+                    <span className="px-4 py-2 rounded-full bg-gray-100 text-xs font-black uppercase tracking-wider text-gray-700">
+                      {item.age}
+                    </span>
+                  </div>
+
+                  <h3 className="text-3xl md:text-4xl font-black text-slate-900">
+                    {item.title}
+                  </h3>
+
+                  <p className="text-gray-600 mt-5 text-base md:text-lg leading-relaxed">
+                    {item.description}
+                  </p>
+
+                  {/* Outcomes */}
+                  <div className="mt-8">
+                    <h4 className="font-black text-slate-900 mb-3">
+                      {t("playAndLearn.keyOutcomesTitle")}
+                    </h4>
+                    <div className="flex flex-wrap gap-3">
+                      {(item.outcomes || []).map((x, idx) => (
+                        <span
+                          key={idx}
+                          className="px-4 py-2 rounded-full text-sm font-bold"
+                          style={{
+                            backgroundColor: `${item.color}12`,
+                            color: item.color,
+                          }}
+                        >
+                          ✅ {x}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Note */}
+                  <div className="mt-8 flex items-center gap-3">
+                    <span className="text-2xl">✨</span>
+                    <p className="text-sm md:text-base text-gray-700 font-semibold italic">
+                      {t("playAndLearn.note")}
+                    </p>
+                  </div>
                 </div>
               </div>
 
-              {/* Text Side */}
-              <div className="md:w-1/2 text-left space-y-4 md:space-y-6">
-                <h3 className={`font-black uppercase tracking-[0.25em] text-xs md:text-sm text-[#00BCD4]`}>{item.method}</h3>
-                <h2 className="text-3xl md:text-4xl font-black text-slate-900 leading-tight">{item.title}</h2>
-                <p className="text-gray-500 text-base md:text-lg leading-relaxed">
-                  {item.description}
-                </p>
-                <div className="flex items-center gap-3 text-[#673AB7] font-bold">
-                  <span className="text-xl">✨</span>
-                  <span className="text-sm md:text-base italic">Joyful, safe, and activity-based environment for toddlers.</span>
-                </div>
-              </div>
-
+              {/* bottom strip */}
+              <div className="h-2 w-full" style={{ backgroundColor: item.color }}></div>
             </div>
           ))}
         </div>
       </section>
 
-      {/* 3. FINAL CALL TO ACTION (Matched Styling) */}
-      <section className="bg-[#1A202C] py-16 text-center text-white">
-        <div className="container mx-auto px-6">
-          <h2 className="text-2xl md:text-4xl font-black mb-6 text-[#00BCD4]">Start Your Child's Journey Today</h2>
-          <p className="text-base md:text-lg text-gray-400 mb-10 max-w-xl mx-auto px-4 font-medium">
-            Enroll your little one in our 2025-26 Play-Way session. Experience our safe 
-            and vibrant campus at Gram Patna Tamoli, Panna.
-          </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-4 md:gap-6 px-6">
-            <button className="bg-[#FF5E5E] text-white px-10 py-4 rounded-full font-black shadow-lg hover:bg-red-600 transition tracking-widest uppercase text-sm">
-              Apply Now
-            </button>
-            <button className="bg-[#00BCD4] text-white px-10 py-4 rounded-full font-black shadow-lg hover:bg-cyan-500 transition tracking-widest uppercase text-sm">
-              Contact Desk
-            </button>
-          </div>
-        </div>
-      </section>
+      {/* ================= FINAL CTA ================= */}
+      <section className="relative overflow-hidden">
+        <div className="bg-[#0f172a] py-20 text-center text-white">
+          <div className="container mx-auto px-6 relative z-10">
+            <h2 className="text-3xl md:text-5xl font-black mb-6 text-[#00BCD4]">
+              {t("playAndLearn.finalCta.title")}
+            </h2>
 
+            <p className="text-base md:text-lg text-gray-300 mb-12 max-w-2xl mx-auto leading-relaxed">
+              {t("playAndLearn.finalCta.subtitle")}
+            </p>
+
+            {/* Points */}
+            <div className="flex flex-wrap justify-center gap-3 mb-12">
+              {finalPoints.map((p, idx) => (
+                <span
+                  key={idx}
+                  className="px-5 py-3 rounded-full bg-white/10 border border-white/10 font-bold"
+                >
+                  {p}
+                </span>
+              ))}
+            </div>
+
+            <div className="flex flex-col sm:flex-row justify-center gap-4 md:gap-8">
+              <Link
+                to="/admissions"
+                className="bg-[#FF5E5E] text-white px-12 py-5 rounded-2xl font-black shadow-2xl hover:bg-red-600 transition-all tracking-widest uppercase text-sm transform hover:-translate-y-1"
+              >
+                {t("playAndLearn.finalCta.btnApply")}
+              </Link>
+
+              <Link
+                to="/contact"
+                className="bg-white text-[#0f172a] px-12 py-5 rounded-2xl font-black shadow-2xl hover:bg-gray-100 transition-all tracking-widest uppercase text-sm transform hover:-translate-y-1"
+              >
+                {t("playAndLearn.finalCta.btnContact")}
+              </Link>
+            </div>
+          </div>
+
+          {/* Decorative circles */}
+          <div className="absolute -top-24 -right-20 w-72 h-72 bg-[#00BCD4] opacity-10 rounded-full"></div>
+          <div className="absolute -bottom-24 -left-20 w-72 h-72 bg-[#FF5E5E] opacity-10 rounded-full"></div>
+        </div>
+
+        <div className="h-12 bg-white rounded-t-[45px] -mt-10"></div>
+      </section>
     </div>
   );
 };

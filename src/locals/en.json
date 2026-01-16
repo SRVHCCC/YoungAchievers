@@ -1,0 +1,1243 @@
+{
+  "header": {
+    "home": "Home",
+    "about": "About",
+    "contact": "Contact",
+    "admission": "Admission Enquiry",
+    "gallery": "Gallery",
+    "academics": "Academics",
+    "campus": "Campus"
+  },
+  "home": {
+    "aboutTitle": "Welcome to Young Achievers",
+    "aboutDesc": "Young Achievers English Medium School is a newly established educational institution launched in 2025, located in Gram Patna Tamoli, District Panna. We provide a modern learning environment for children from Nursery to Class 8. Our philosophy is discipline, safety and concept-based education — making quality English-medium learning accessible to every child in the region.",
+
+    "badges": {
+      "safe": "🛡 Safe Campus",
+      "teachers": "👨‍🏫 Skilled Teachers",
+      "english": "📚 English Medium",
+      "concept": "🎯 Concept Clarity"
+    },
+
+    "highlights": {
+      "activity": {
+        "title": "Activity-Based Learning",
+        "desc": "Hands-on learning through games, projects and classroom activities."
+      },
+      "foundation": {
+        "title": "Strong Foundation",
+        "desc": "English Medium education with deep focus on concept clarity and basics."
+      },
+      "development": {
+        "title": "Overall Development",
+        "desc": "Discipline, confidence building and personality development activities."
+      }
+    },
+
+    "programs": {
+      "title": "Learning Programs",
+      "subtitle": "Structured learning journey from Nursery to Class 8",
+
+      "prePrimary": {
+        "title": "Nursery – UKG",
+        "desc": "Play-based learning, phonics, rhymes, motor skills and storytelling."
+      },
+      "primary": {
+        "title": "Class 1 – 5",
+        "desc": "Strong reading/writing foundation, maths basics, discipline and confidence."
+      },
+      "middle": {
+        "title": "Class 6 – 8",
+        "desc": "Concept clarity, logical thinking, communication and personality development."
+      },
+
+      "cta": "View Admission Details →"
+    },
+
+    "stats": {
+      "students": "Happy Students",
+      "teachers": "Teachers & Staff",
+      "classes": "Class Structure",
+      "campus": "Campus & Discipline"
+    },
+
+    "testimonials": {
+      "title": "What Parents Say",
+      "subtitle": "Real feedback from parents",
+
+      "items": [
+        {
+          "name": "Parent (Nursery)",
+          "msg": "My child loves coming to school. Teachers are caring and learning is fun!"
+        },
+        {
+          "name": "Parent (Class 3)",
+          "msg": "Excellent English-medium foundation. Discipline and confidence are improving day by day."
+        },
+        {
+          "name": "Parent (Class 6)",
+          "msg": "Concept clarity is strong. School encourages participation and overall development."
+        }
+      ],
+
+      "prev": "← Prev",
+      "next": "Next →"
+    },
+
+    "faq": {
+      "title": "FAQs",
+      "subtitle": "Admission and school related common questions",
+
+      "items": [
+        {
+          "q": "Which classes are available?",
+          "a": "We offer Nursery to Class 8 with structured academic planning."
+        },
+        {
+          "q": "Is the school English Medium?",
+          "a": "Yes, we follow English-medium learning with focus on reading, writing and speaking."
+        },
+        {
+          "q": "How can I take admission?",
+          "a": "Click on Admission page and fill the form. Our team will contact you."
+        },
+        {
+          "q": "What is special about learning here?",
+          "a": "We focus on discipline, safety, concept-based learning and activity-based teaching."
+        }
+      ]
+    },
+
+    "finalCta": {
+      "title": "Admissions Open for 2026–27",
+      "desc": "Give your child a strong academic foundation with discipline, safety and concept-based learning.",
+      "apply": "Apply for Admission",
+      "learn": "Learn More"
+    }
+  },
+  
+  "about": {
+    "hero": {
+      "badge": "✨ Welcome to Young Achievers",
+      "title": "About Our School",
+      "subtitle": "Shaping confident learners in Gram Patna Tamoli, District Panna (M.P.)",
+      "btnAdmissions": "Admissions",
+      "btnContact": "Contact Us"
+    },
+
+    "intro": {
+      "imageAlt": "Young Achievers Campus",
+      "establishedYear": "2025",
+      "establishedLabel": "Established",
+
+      "titleLine1": "Welcome to the",
+      "titleLine2": "New Era of Excellence",
+
+      "p1BoldName": "Young Achievers English Medium School",
+      "p1Text1": "is a newly established educational institution launched in",
+      "p1YearBold": "2025",
+      "p1Text2": ". Located in",
+      "p1LocationBold": "Gram Patna Tamoli, District Panna",
+      "p1Text3": ", we provide a modern learning environment for children from",
+      "p1ClassBold": "Nursery to Class 8",
+      "p1Text4": ".",
+
+      "p2Text1": "Our school is built on the philosophy of",
+      "p2DisciplineBold": "discipline, safety",
+      "p2Text2": "and",
+      "p2ConceptBold": "concept-based education",
+      "p2Text3": ". We aim to make quality English-medium education accessible to every child in the region.",
+
+      "chips": [
+        "✔ NCERT Based Curriculum",
+        "✔ Discipline & Safety",
+        "✔ Activity-Based Learning"
+      ]
+    },
+
+    "missionVision": {
+      "title": "Our Mission & Vision",
+      "subtitle": "Values that shape every learner at Young Achievers",
+
+      "missionTitle": "Mission",
+      "missionDesc": "To provide quality English-medium education with discipline, safety and concept-based learning. Our mission is to create confident children who grow in knowledge, values and skills.",
+
+      "visionTitle": "Vision",
+      "visionDesc": "To become the most trusted school in the region by nurturing well-rounded students with strong academics, moral values and a lifelong love for learning."
+    },
+
+    "journey": {
+      "title": "Our Journey",
+      "subtitle": "How we are building excellence step by step",
+
+      "steps": [
+        {
+          "title": "2025 - School Established",
+          "desc": "Young Achievers English Medium School was launched with modern infrastructure and disciplined learning approach."
+        },
+        {
+          "title": "Strong Academic Planning",
+          "desc": "NCERT based English-medium curriculum with activity-based learning and concept clarity."
+        },
+        {
+          "title": "Holistic Development",
+          "desc": "Sports, moral values, confidence building, communication and personality development."
+        }
+      ]
+    },
+
+    "features": {
+      "title": "Why Choose Us?",
+      "items": [
+        {
+          "title": "Modern Curriculum",
+          "desc": "NCERT based English Medium pattern with conceptual understanding.",
+          "color": "#4FC3F7",
+          "icon": "📘"
+        },
+        {
+          "title": "Safe & Disciplined Campus",
+          "desc": "Child-friendly environment with proper supervision and discipline.",
+          "color": "#FF5E5E",
+          "icon": "🛡"
+        },
+        {
+          "title": "Expert Faculty",
+          "desc": "Qualified teachers dedicated to each child’s growth and learning.",
+          "color": "#FFB74D",
+          "icon": "👨‍🏫"
+        },
+        {
+          "title": "Activity Based Learning",
+          "desc": "Hands-on approach to build curiosity, confidence and creativity.",
+          "color": "#673AB7",
+          "icon": "🎯"
+        },
+        {
+          "title": "Smart Learning Support",
+          "desc": "Infrastructure designed for digital learning and modern teaching.",
+          "color": "#00BCD4",
+          "icon": "💡"
+        },
+        {
+          "title": "Admissions Open",
+          "desc": "Admissions available Nursery to Class 8. Visit us for a campus tour.",
+          "color": "#64748b",
+          "icon": "✅"
+        }
+      ]
+    },
+
+    "stats": {
+      "estYearLabel": "Est. Year",
+      "teachersLabel": "Teachers",
+      "gradesLabel": "Grade Levels",
+      "dedicationLabel": "Dedication"
+    },
+
+    "finalCta": {
+      "title": "Visit Young Achievers Today",
+      "address": "Gram Patna Tamoli, District Panna, Madhya Pradesh - 488333",
+      "callBtn": "Call: +91 87706 98713",
+      "emailBtn": "Email Us"
+    }
+  },
+
+ "playground": {
+    "hero": {
+      "tags": ["School Campus", "Outdoor Fitness", "Discipline + Fun"],
+      "title": "School Playground",
+      "subtitle": "Where learning meets fun, fitness and friendship. Our playground is designed to support physical growth, confidence and teamwork.",
+      "btnApply": "Apply for Admission",
+      "btnContact": "Contact School",
+      "miniStats": [
+        { "value": "Safe", "label": "Supervised Playtime" },
+        { "value": "Sports", "label": "Fitness & stamina building" },
+        { "value": "Teamwork", "label": "Leadership in children" }
+      ]
+    },
+
+    "intro": {
+      "imageAlt": "School Playground",
+      "badgeTitle": "Healthy",
+      "badgeSubtitle": "Play Space",
+      "title": "A Healthy & Happy Play Environment",
+      "p1": "At Young Achievers, we believe outdoor play is an essential part of a child’s growth. Our playground supports physical fitness, confidence and social skills in a safe, joyful environment.",
+      "p2": "From Nursery to Class 8, students enjoy regular opportunities for outdoor games, sports activities and free play under supervision.",
+      "chips": ["✅ Fitness & Strength", "✅ Confidence Building", "✅ Social Growth"]
+    },
+
+    "highlights": {
+      "title": "Playground Highlights",
+      "subtitle": "Everything is designed for safety, fun and overall child development.",
+      "features": [
+        {
+          "title": "Safe & Secure Area",
+          "description": "Playground is secured and supervised to ensure complete safety during playtime.",
+          "icon": "🛡",
+          "color": "#FF5E5E"
+        },
+        {
+          "title": "Age-Appropriate Equipment",
+          "description": "Different play zones and equipment designed for Nursery, Primary and Middle School children.",
+          "icon": "🧸",
+          "color": "#FFB74D"
+        },
+        {
+          "title": "Physical Fitness",
+          "description": "Outdoor activities improve strength, coordination and overall health.",
+          "icon": "🏃",
+          "color": "#673AB7"
+        },
+        {
+          "title": "Teamwork & Discipline",
+          "description": "Sports and group games build teamwork, leadership and discipline.",
+          "icon": "🤝",
+          "color": "#00BCD4"
+        }
+      ]
+    },
+
+    "activities": {
+      "title": "Outdoor Activities We Offer",
+      "subtitle": "Activities are planned according to age group to ensure safety, enjoyment and skill development.",
+      "items": [
+        {
+          "icon": "🐣",
+          "title": "Nursery – UKG",
+          "desc": "Slides, swings, balancing games and safe free play",
+          "color": "#4DD0E1"
+        },
+        {
+          "icon": "⚽",
+          "title": "Class 1 – 5",
+          "desc": "Running games, basic sports and group activities",
+          "color": "#FFB74D"
+        },
+        {
+          "icon": "🏏",
+          "title": "Class 6 – 8",
+          "desc": "Cricket, football, physical training and fitness exercises",
+          "color": "#673AB7"
+        }
+      ],
+      "footerLine": "✅ Fitness • ✅ Discipline • ✅ Teamwork"
+    },
+
+    "finalCta": {
+      "title": "Let’s Build Strong & Active Learners",
+      "subtitle": "Give your child a balanced education with strong academics, discipline and physical fitness at Young Achievers English Medium School.",
+      "btnApply": "Apply Now",
+      "btnContact": "Contact Desk",
+      "footer": "📍 Gram Patna Tamoli, Panna | 📞 +91 87706 98713"
+    }
+  
+},
+
+
+  "playAndLearn": {
+    "hero": {
+      "tags": ["Nursery – UKG", "Activity-Based Learning", "Safe Environment"],
+      "title": "Play & Learn Program",
+      "subtitle": "A joyful start where curiosity meets discovery. Our pre-primary wing focuses on learning through play to build confidence, creativity and strong foundation skills.",
+      "btnApply": "Apply for Admission",
+      "btnTalk": "Talk to Admission Desk",
+      "miniStats": [
+        { "value": "5", "label": "Learning Pillars" },
+        { "value": "100%", "label": "Activity Based" },
+        { "value": "Safe", "label": "Child Friendly Campus" }
+      ]
+    },
+
+    "sectionTitle": {
+      "title": "Our Pre-Primary Pillars",
+      "subtitle": "Each module supports complete development — sensory, visual, creative, language and social skills."
+    },
+
+    "modules": [
+      {
+        "title": "Sensory Exploration",
+        "method": "Tactile Learning",
+        "description": "Through clay modeling, sand play, and water activities, children explore different textures. This is essential for sensory processing and fine motor skill development.",
+        "tag": "Motor Skills",
+        "outcomes": ["Fine motor", "Texture awareness", "Grip strength"],
+        "age": "Nursery – UKG",
+        "color": "#FF5E5E"
+      },
+      {
+        "title": "Visual Recognition",
+        "method": "Observation-Based Learning",
+        "description": "Using colorful flashcards and 3D objects, we sharpen visual memory. Children learn to identify shapes, colors, and patterns in a fun, pressure-free way.",
+        "tag": "Visual Memory",
+        "outcomes": ["Shapes", "Colors", "Patterns"],
+        "age": "Nursery – UKG",
+        "color": "#FFB74D"
+      },
+      {
+        "title": "Creative Expression",
+        "method": "Art & Storytelling",
+        "description": "Stories and puppet shows ignite imagination. We encourage children to express themselves through finger painting, drawing, and role-playing.",
+        "tag": "Imagination",
+        "outcomes": ["Creativity", "Confidence", "Story skills"],
+        "age": "Nursery – UKG",
+        "color": "#673AB7"
+      },
+      {
+        "title": "Phonics & Language",
+        "method": "Auditory Discovery",
+        "description": "Rhymes, music, and phonics sounds help children recognize language patterns. This builds a strong foundation for future reading and speaking skills.",
+        "tag": "Language Prep",
+        "outcomes": ["Phonics", "Vocabulary", "Speaking"],
+        "age": "Nursery – UKG",
+        "color": "#00BCD4"
+      },
+      {
+        "title": "Social Interaction",
+        "method": "Value-Based Play",
+        "description": "Group games and shared activities teach children the importance of sharing, teamwork, and basic manners in a caring, social environment.",
+        "tag": "Social Skills",
+        "outcomes": ["Teamwork", "Sharing", "Confidence"],
+        "age": "Nursery – UKG",
+        "color": "#4DD0E1"
+      }
+    ],
+
+    "keyOutcomesTitle": "Key Outcomes",
+    "note": "Joyful, safe and pressure-free learning designed for toddlers.",
+
+    "finalCta": {
+      "title": "Start Your Child’s Journey Today",
+      "subtitle": "Enroll your little one in our Play-Way session. Explore learning modules, safe environment, discipline and strong foundation building.",
+      "points": ["🛡 Safe Campus", "🎯 Activity Learning", "📚 Strong Basics", "😊 Happy Learning"],
+      "btnApply": "Apply Now",
+      "btnContact": "Contact Desk"
+    }
+  },
+
+
+  "primaryFoundation": {
+    "hero": {
+      "tags": ["Classes 1 – 5", "Strong Academics", "Concept Based Learning"],
+      "title": "Primary Foundation",
+      "subtitle": "Nurturing young learners through a structured curriculum that builds strong basics, improves communication and develops logical thinking for future success.",
+      "btnApply": "Apply for Admission",
+      "btnContact": "Contact School",
+      "miniStats": [
+        { "value": "English", "label": "Focus on Reading & Speaking" },
+        { "value": "Math", "label": "Strong Logic & Numeracy" },
+        { "value": "Science", "label": "Curiosity + Experiments" }
+      ]
+    },
+
+    "pillars": {
+      "title": "Academic Pillars",
+      "subtitle": "Our primary wing focuses on essential pillars that build strong academic growth, communication and confidence.",
+      "pillarsTags": ["✅ Concept Clarity", "✅ Weekly Revision"],
+      "items": [
+        {
+          "title": "Core Foundation",
+          "description": "In-depth focus on English, Math, and Science to build strong fundamental knowledge.",
+          "icon": "📘",
+          "color": "#4FC3F7"
+        },
+        {
+          "title": "Critical Thinking",
+          "description": "Moving beyond memorization to help students understand the 'How' and 'Why' of every topic.",
+          "icon": "🧠",
+          "color": "#FFB74D"
+        },
+        {
+          "title": "Confident Expression",
+          "description": "Daily reading and public speaking exercises to develop bilingual communication skills.",
+          "icon": "🗣️",
+          "color": "#FF5E5E"
+        },
+        {
+          "title": "Hands-on Learning",
+          "description": "Monthly projects and basic lab activities that make learning practical and engaging.",
+          "icon": "🧩",
+          "color": "#673AB7"
+        }
+      ]
+    },
+
+    "curriculum": {
+      "title": "Structured Curriculum",
+      "subtitle": "Subjects mapped to holistic cognitive development.",
+      "items": [
+        {
+          "title": "Languages",
+          "icon": "📝",
+          "list": ["English Literature", "Hindi Vyakaran", "Reading Practice"]
+        },
+        {
+          "title": "Sciences",
+          "icon": "🔬",
+          "list": ["EVS & General Science", "Nature Observation", "Simple Experiments"]
+        },
+        {
+          "title": "Numeracy",
+          "icon": "➗",
+          "list": ["Mental Math", "Geometry Basics", "Data Handling"]
+        },
+        {
+          "title": "Digital Literacy",
+          "icon": "💻",
+          "list": ["Basics of Computers", "Logic Games", "Smart Class Tools"]
+        }
+      ]
+    },
+
+    "environment": {
+      "title": "Modern Learning Environment",
+      "subtitle": "We create disciplined classrooms where children learn with confidence, care and clarity.",
+      "points": [
+        {
+          "t": "1:25 Teacher Ratio",
+          "d": "Personalized attention ensures every child learns at the right pace.",
+          "badge": "01"
+        },
+        {
+          "t": "Smart Class Integration",
+          "d": "Visual teaching & interactive digital tools for concept clarity.",
+          "badge": "02"
+        },
+        {
+          "t": "Safe & Disciplined Campus",
+          "d": "Respectful environment where discipline is taught positively.",
+          "badge": "03"
+        },
+        {
+          "t": "Weekly Assessments",
+          "d": "Small revision tests to improve memory, confidence and performance.",
+          "badge": "04"
+        }
+      ],
+
+      "notice": {
+        "title": "Extra Support for Every Child",
+        "desc": "We help weak students with extra guidance and encourage bright students with advanced activities — so everyone grows confidently."
+      }
+    },
+
+    "finalCta": {
+      "title": "Secure Your Child’s Future Today",
+      "subtitle": "Registration is open for the new session for Classes 1 to 5. Give your child strong academics, discipline and confidence.",
+      "btnApply": "Apply Now",
+      "btnTalk": "Talk to School",
+      "footer": "📍 Gram Patna Tamoli, Panna | 📞 +91 87706 98713"
+    }
+  },
+  
+  "middleSchool": {
+    "hero": {
+      "tags": ["Middle School", "Class 6 – 8", "Learning to Mastery"],
+      "title": "Middle School Program",
+      "subtitle": "Strengthening academic concepts while building discipline, responsibility and analytical thinking — preparing students for high school and future success.",
+      "btnApply": "Apply for Admission",
+      "btnTalk": "Talk to Admission Desk",
+      "miniStats": [
+        { "value": "Science", "label": "Inquiry & Practical Learning" },
+        { "value": "Math", "label": "Logic + Problem Solving" },
+        { "value": "Discipline", "label": "Strong routine & responsibility" }
+      ]
+    },
+
+    "core": {
+      "title": "Academic Core",
+      "subtitle": "Middle School helps students transition from basic learning to mastery through discipline, depth and confidence.",
+      "badgeClass": "Class 6 – 8",
+      "outcomesTitle": "Key Outcomes",
+      "note": "Strong preparation for high school subjects & exams."
+    },
+
+    "modules": [
+      {
+        "title": "Advanced Concepts",
+        "method": "Depth-First Learning",
+        "description": "In Middle School, we move beyond the basics. We focus on in-depth understanding of complex scientific theories and mathematical logic to prepare students for high school challenges.",
+        "image": "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=800&q=80",
+        "tag": "Analytical Thinking",
+        "outcomes": ["Strong concepts", "Math logic", "Science depth"],
+        "color": "#673AB7"
+      },
+      {
+        "title": "Academic Discipline",
+        "method": "Structured Responsibility",
+        "description": "We instill a sense of accountability and time management. Our structured environment ensures that students develop the focus and consistency required for lifelong success.",
+        "image": "https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&w=800&q=80",
+        "tag": "Self-Discipline",
+        "outcomes": ["Time management", "Consistency", "Daily revision"],
+        "color": "#FFB74D"
+      },
+      {
+        "title": "Scientific Temper",
+        "method": "Inquiry & Research",
+        "description": "Students are encouraged to analyze data and perform structured experiments. We foster a mindset that questions 'why' and seeks evidence-based answers.",
+        "image": "https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=800&q=80",
+        "tag": "Science & Lab",
+        "outcomes": ["Evidence-based learning", "Experiments", "Observation"],
+        "color": "#FF5E5E"
+      },
+      {
+        "title": "Digital Leadership",
+        "method": "Advanced IT Skills",
+        "description": "Moving from basic computer literacy to digital creation. Students learn to use technology for research, presentation, and fundamental coding logic.",
+        "image": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=800&q=80",
+        "tag": "Future Ready",
+        "outcomes": ["Digital research", "Presentations", "Coding basics"],
+        "color": "#00BCD4"
+      },
+      {
+        "title": "Character Building",
+        "method": "Ethics & Values",
+        "description": "Beyond textbooks, we focus on communication skills and emotional intelligence. We aim to build responsible, ethical, and confident young leaders.",
+        "image": "https://images.unsplash.com/photo-1529070538774-1843cb3265df?auto=format&fit=crop&w=800&q=80",
+        "tag": "Personality Dev",
+        "outcomes": ["Ethics", "Confidence", "Communication"],
+        "color": "#4DD0E1"
+      }
+    ],
+
+    "advantages": {
+      "title": "What Makes Middle School Strong?",
+      "subtitle": "A balanced blend of academics, discipline and personality growth.",
+      "items": [
+        {
+          "icon": "📚",
+          "title": "Regular Revision",
+          "desc": "Weekly revision tests help students retain concepts and improve performance.",
+          "color": "#FF5E5E"
+        },
+        {
+          "icon": "🎯",
+          "title": "Concept Clarity",
+          "desc": "Focus on understanding instead of rote memorization for long-term learning.",
+          "color": "#673AB7"
+        },
+        {
+          "icon": "🧠",
+          "title": "Competitive Mindset",
+          "desc": "Students are trained to solve problems logically and confidently.",
+          "color": "#FFB74D"
+        },
+        {
+          "icon": "🗣️",
+          "title": "Communication Skills",
+          "desc": "Reading, speaking, teamwork and leadership activities for personality development.",
+          "color": "#00BCD4"
+        }
+      ]
+    },
+
+    "finalCta": {
+      "title": "Empower Your Child’s Future",
+      "subtitle": "Join the new academic session at Young Achievers. Middle School builds academic depth and leadership qualities.",
+      "btnApply": "Apply Now",
+      "btnContact": "Contact Desk",
+      "footer": "📍 Gram Patna Tamoli, Panna | 📞 +91 87706 98713"
+    }
+  },
+
+  "classroomsPage": {
+    "hero": {
+      "tags": ["Learning Spaces", "Safe Environment", "Smart Teaching"],
+      "title": "Our Classrooms",
+      "subtitle": "Safe, engaging and well-equipped learning spaces designed for confidence, discipline and concept-based learning.",
+      "btnApply": "Apply for Admission",
+      "btnContact": "Contact School",
+      "miniStats": [
+        { "value": "Nursery–UKG", "label": "Play-based learning rooms" },
+        { "value": "Class 1–5", "label": "Strong academic focus" },
+        { "value": "Class 6–8", "label": "Mastery & discipline" }
+      ]
+    },
+
+    "structure": {
+      "title": "Classroom Structure",
+      "subtitle": "Every classroom is designed as per age group learning needs — joyful learning for toddlers, strong basics for primary and concept mastery for middle school."
+    },
+
+    "classrooms": [
+      {
+        "title": "Pre-Primary Classrooms (Nursery – UKG)",
+        "description": "Our pre-primary classrooms are colorful, safe and activity-based. Designed to encourage curiosity, communication and early learning through play.",
+        "points": [
+          "Play-based & joyful learning",
+          "Phonics & basic numeracy",
+          "Child-friendly furniture",
+          "Personal attention to every child"
+        ],
+        "image": "https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&w=1200&q=80",
+        "tag": "Play & Learn",
+        "color": "#00BCD4"
+      },
+      {
+        "title": "Primary Classrooms (Class 1 – 5)",
+        "description": "Primary classrooms focus on strong academic foundations with interactive teaching methods that make learning engaging and effective.",
+        "points": [
+          "Smart classroom learning",
+          "Strong focus on English & Mathematics",
+          "Interactive teaching methods",
+          "Regular assessments & feedback"
+        ],
+        "image": "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1200&q=80",
+        "tag": "Strong Basics",
+        "color": "#FFB74D"
+      },
+      {
+        "title": "Middle School Classrooms (Class 6 – 8)",
+        "description": "Middle school classrooms encourage concept clarity, discipline and independent thinking to prepare students for higher education.",
+        "points": [
+          "Concept-based learning",
+          "Science & computer education",
+          "Personality & leadership development",
+          "Focus on discipline and responsibility"
+        ],
+        "image": "https://images.unsplash.com/photo-1529070538774-1843cb3265df?auto=format&fit=crop&w=1200&q=80",
+        "tag": "Mastery Mode",
+        "color": "#673AB7"
+      }
+    ],
+
+    "keyHighlights": "Key Highlights",
+    "note": "Clean, disciplined and student-friendly classroom environment.",
+
+    "environment": {
+      "title": "Safe & Student-Friendly Environment",
+      "subtitle": "All classrooms are designed keeping student safety, comfort and effective learning in mind. We maintain a disciplined, clean and positive atmosphere for every child.",
+      "cards": [
+        {
+          "icon": "🪑",
+          "title": "Comfortable Seating",
+          "desc": "Age-appropriate furniture for students.",
+          "color": "#FFB74D"
+        },
+        {
+          "icon": "📽",
+          "title": "Smart Teaching Aids",
+          "desc": "Digital & visual learning support for concept clarity.",
+          "color": "#00BCD4"
+        },
+        {
+          "icon": "🧼",
+          "title": "Clean & Hygienic",
+          "desc": "Daily cleanliness and hygiene standards maintained.",
+          "color": "#FF5E5E"
+        },
+        {
+          "icon": "🛡",
+          "title": "Safe & Secure",
+          "desc": "Supervised classrooms with disciplined environment.",
+          "color": "#673AB7"
+        }
+      ]
+    },
+
+    "finalCta": {
+      "title": "Give Your Child the Best Learning Space",
+      "subtitle": "Enroll your child at Young Achievers English Medium School and experience safe classrooms, disciplined teaching and strong academic foundation.",
+      "btnApply": "Apply Now",
+      "btnContact": "Contact Desk",
+      "footer": "📍 Gram Patna Tamoli, Panna | 📞 +91 87706 98713"
+    }
+  },
+  
+  "libraryPage": {
+    "hero": {
+      "tags": ["Library & Reading", "Knowledge Hub", "Discipline + Focus"],
+      "title": "School Library",
+      "subtitle": "Building knowledge, imagination and curiosity through books. Our library helps children develop strong reading habits from an early age.",
+      "btnApply": "Apply for Admission",
+      "btnContact": "Contact School",
+      "miniStats": [
+        { "value": "Books", "label": "Story + Academic" },
+        { "value": "Habit", "label": "Reading culture" },
+        { "value": "Focus", "label": "Calm learning space" }
+      ]
+    },
+
+    "intro": {
+      "image": "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=1200&q=80",
+      "badgeTitle": "Read",
+      "badgeSub": "Learn • Grow",
+      "title": "A World of Books for Every Child",
+      "p1": "At Young Achievers, the library plays an important role in developing reading habits and expanding knowledge. Students from Nursery to Class 8 are encouraged to explore books beyond textbooks.",
+      "p2": "Our library provides a peaceful and well-organized environment where children can read, learn and build a lifelong love for books.",
+      "chips": ["✅ Better Vocabulary", "✅ Strong Imagination", "✅ Self Learning"]
+    },
+
+    "highlights": {
+      "title": "Library Highlights",
+      "subtitle": "Everything is designed to build reading habit, focus and discipline.",
+      "features": [
+        {
+          "title": "Well-Stocked Library",
+          "description": "Wide collection of story books, reference books and academic resources for all age groups.",
+          "icon": "📚",
+          "color": "#673AB7"
+        },
+        {
+          "title": "Age-Wise Sections",
+          "description": "Separate reading materials for Nursery, Primary and Middle school students.",
+          "icon": "🧒",
+          "color": "#FFB74D"
+        },
+        {
+          "title": "Quiet & Disciplined Environment",
+          "description": "A calm reading space that develops focus, concentration and discipline.",
+          "icon": "🤫",
+          "color": "#00BCD4"
+        },
+        {
+          "title": "Reading Habit Development",
+          "description": "Regular library periods encourage reading, curiosity and self-learning.",
+          "icon": "🌱",
+          "color": "#FF5E5E"
+        }
+      ]
+    },
+
+    "ageWise": {
+      "title": "Reading for Every Age Group",
+      "subtitle": "Library resources are selected as per reading level and learning needs.",
+      "cards": [
+        {
+          "icon": "🐣",
+          "title": "Nursery – UKG",
+          "desc": "Picture books, rhyme books, story books and early reading materials.",
+          "color": "#4DD0E1"
+        },
+        {
+          "icon": "📘",
+          "title": "Class 1 – 5",
+          "desc": "Story books, general knowledge books and subject-based basics.",
+          "color": "#FFB74D"
+        },
+        {
+          "icon": "📗",
+          "title": "Class 6 – 8",
+          "desc": "Reference books, novels, biographies and academic resources.",
+          "color": "#673AB7"
+        }
+      ],
+      "footerLine": "✅ Reading • ✅ Vocabulary • ✅ Knowledge"
+    },
+
+    "routine": {
+      "title": "Library Routine & Discipline",
+      "subtitle": "We maintain a calm environment and encourage every child to read regularly.",
+      "items": [
+        {
+          "title": "Weekly Library Period",
+          "desc": "Every class gets regular library time to build strong reading habit.",
+          "icon": "🗓️"
+        },
+        {
+          "title": "Book Issue System",
+          "desc": "Students can borrow books and return them within the set time.",
+          "icon": "📖"
+        },
+        {
+          "title": "Silence & Discipline",
+          "desc": "A calm environment is maintained so every student can read peacefully.",
+          "icon": "✅"
+        },
+        {
+          "title": "Story & Reading Sessions",
+          "desc": "Special sessions to improve listening, vocabulary and imagination.",
+          "icon": "🎭"
+        }
+      ]
+    },
+
+    "finalCta": {
+      "title": "Let’s Build a Strong Reading Habit",
+      "subtitle": "A good reader becomes a confident learner. Join Young Achievers and help your child grow with books, knowledge and imagination.",
+      "btnApply": "Apply Now",
+      "btnContact": "Contact Desk",
+      "footer": "📍 Gram Patna Tamoli, Panna | 📞 +91 87706 98713"
+    }
+  },
+
+  "contactPage": {
+    "header": {
+      "title": "Contact Us",
+      "subtitle": "Gram Patna Tamoli, District Panna (M.P.)"
+    },
+
+    "form": {
+      "title": "Send an Inquiry",
+      "subtitle": "Fill the form and our team will contact you soon.",
+
+      "successMsg": "✅ Message sent successfully! Our team will contact you soon.",
+      "btnSending": "Sending...",
+      "btnSend": "Send Message",
+      "privacyNote": "By submitting, you agree to be contacted by the school team.",
+
+      "labels": {
+        "childName": "Child's Name *",
+        "phone": "Mobile Number *",
+        "admissionClass": "Class for Admission *",
+        "message": "Your Message *"
+      },
+
+      "placeholders": {
+        "childName": "Enter child's full name",
+        "phone": "10-digit number",
+        "message": "Write your query..."
+      },
+
+      "classOptions": ["Nursery - UKG", "Class 1 - 5", "Class 6 - 8"],
+
+      "errors": {
+        "childNameRequired": "Child's name is required.",
+        "phoneInvalid": "Enter a valid 10-digit phone number.",
+        "messageMin": "Please write a message (min 5 characters).",
+        "somethingWrong": "Something went wrong. Try again.",
+        "failedToSend": "Failed to send message."
+      }
+    },
+
+    "cards": {
+      "address": {
+        "icon": "📍",
+        "title": "Address",
+        "text1": "Gram Patna Tamoli, District Panna",
+        "text2": "Madhya Pradesh - 488333",
+        "color": "#4FC3F7"
+      },
+      "call": {
+        "icon": "📞",
+        "title": "Call Now",
+        "phone": "+91 87706 98713",
+        "note": "For admission queries & visit",
+        "color": "#FF5E5E"
+      },
+      "email": {
+        "icon": "✉️",
+        "title": "Email",
+        "email": "info@youngachievers.com",
+        "note": "We usually reply within 24 hours",
+        "color": "#673AB7"
+      },
+      "timings": {
+        "icon": "⏰",
+        "title": "Timings",
+        "line1": "Mon–Fri: 8:00 AM – 2:00 PM",
+        "line2": "Sat: 8:00 AM – 12:00 PM",
+        "line3": "Sunday: CLOSED",
+        "color": "#FFB74D"
+      }
+    },
+
+    "map": {
+      "title": "School Location",
+      "src": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14551.46823337351!2d80.19!3d24.72!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjTCsDQzJzEyLjAiTiA4MMKwMTEnMjQuMCJF!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+    },
+
+    "faq": {
+      "title": "FAQs",
+      "subtitle": "Admission and school related common questions",
+      "items": [
+        {
+          "q": "Which classes are available for admission?",
+          "a": "Admissions are open from Nursery to Class 8 with structured learning programs."
+        },
+        {
+          "q": "Is the school English Medium?",
+          "a": "Yes, we provide English-medium education with focus on reading, writing and speaking."
+        },
+        {
+          "q": "What documents are required for admission?",
+          "a": "Generally, Birth Certificate, Aadhaar (optional), previous report card (if applicable) and passport size photo."
+        },
+        {
+          "q": "What is the school timing?",
+          "a": "Monday–Friday: 8:00 AM – 2:00 PM, Saturday: 8:00 AM – 12:00 PM, Sunday: Closed."
+        },
+        {
+          "q": "How can we visit the school campus?",
+          "a": "You can visit during office timings. For a guided visit, contact us on phone before arriving."
+        }
+      ]
+    },
+
+    "finalCta": {
+      "title": "Want to Visit the School?",
+      "subtitle": "You can visit during office timings. For a guided campus visit, call us and book your slot.",
+      "btnCall": "Call Now",
+      "btnSend": "Send Message"
+    }
+  },
+  
+  "admissionPage": {
+    "hero": {
+      "badge": "Admissions Open • 2026–27",
+      "title": "Admission Inquiry",
+      "subtitle": "Young Achievers English Medium School — Quality English-medium education from Nursery to Class 8.",
+      "btnCall": "Call: +91 87706 98713",
+      "btnContact": "Contact Desk"
+    },
+
+    "process": {
+      "title": "Simple Admission Process",
+      "subtitle": "Clear, transparent and parent-friendly admission flow.",
+      "steps": [
+        {
+          "title": "Fill Inquiry Form",
+          "desc": "Share basic details about student & class.",
+          "icon": "📝",
+          "color": "#673AB7"
+        },
+        {
+          "title": "Counseling Call",
+          "desc": "Admission team contacts for guidance.",
+          "icon": "📞",
+          "color": "#00BCD4"
+        },
+        {
+          "title": "Visit & Admission",
+          "desc": "Campus visit + documentation process.",
+          "icon": "🏫",
+          "color": "#FFB74D"
+        }
+      ]
+    },
+
+    "leftInfo": {
+      "whyTitle": "Why Choose Young Achievers?",
+      "whyDesc": "Our learning environment is designed for strong academics, discipline and overall development.",
+      "highlights": [
+        {
+          "icon": "📚",
+          "title": "NCERT Based Curriculum",
+          "desc": "English medium learning with concept clarity."
+        },
+        {
+          "icon": "🎯",
+          "title": "Discipline & Safety",
+          "desc": "Positive discipline + caring environment."
+        },
+        {
+          "icon": "💡",
+          "title": "Smart Learning",
+          "desc": "Interactive teaching & activities for growth."
+        }
+      ],
+      "officeTitle": "Admission Office",
+      "officePhone": "+91 87706 98713",
+      "officeDesc": "Call for enquiry • campus visit • counselling."
+    },
+
+    "form": {
+      "title": "Student Admission Form",
+      "subtitle": "Fill basic details. Our team will contact you shortly.",
+      "classes": [
+        "Nursery",
+        "LKG",
+        "UKG",
+        "Class 1",
+        "Class 2",
+        "Class 3",
+        "Class 4",
+        "Class 5",
+        "Class 6",
+        "Class 7",
+        "Class 8"
+      ],
+      "labels": {
+        "studentName": "Student Full Name *",
+        "admissionClass": "Admission Class *",
+        "dob": "Date of Birth *",
+        "phone": "Parent/Guardian Phone *",
+        "lastSchool": "Last School Attended (Optional)",
+        "address": "Residential Address (Optional)"
+      },
+      "placeholders": {
+        "studentName": "Enter full name",
+        "phone": "10-digit number",
+        "lastSchool": "School name (if applicable)",
+        "address": "Village / City / District"
+      },
+      "consentText": "I confirm the details are correct and I want to receive updates about the admission process.",
+      "btnSubmitting": "Submitting...",
+      "btnSubmit": "Submit Inquiry",
+      "note": "Our admission team will contact you within 24 hours.",
+
+      "toast": {
+        "studentNameRequired": "Student name is required!",
+        "dobRequired": "Date of birth is required!",
+        "phoneInvalid": "Enter a valid 10-digit phone number!",
+        "consentRequired": "Please confirm consent to continue!",
+        "loading": "Submitting your inquiry...",
+        "success": "✅ Inquiry submitted! Our team will contact you soon.",
+        "somethingWrong": "Something went wrong. Please try again.",
+        "failedToSubmit": "Failed to submit inquiry."
+      }
+    },
+
+    "bottomCta": {
+      "title": "Ready to Join Young Achievers?",
+      "subtitle": "Nursery to Class 8 admissions are open for 2026–27. Visit the campus and meet our teachers.",
+      "btnCall": "Call Now",
+      "btnContact": "Contact Desk"
+    }
+  },
+
+  
+  "galleryPage": {
+    "hero": {
+      "chips": ["School Life", "Events & Activities", "Campus Moments"],
+      "title": "School Gallery",
+      "subtitle": "A glimpse of learning, creativity, celebrations and fun at Young Achievers."
+    },
+
+    "tabs": [
+      { "label": "All", "key": "all" },
+      { "label": "Classroom", "key": "classroom" },
+      { "label": "Sports", "key": "sports" },
+      { "label": "Art", "key": "art" },
+      { "label": "Events", "key": "events" }
+    ],
+
+    "sections": [
+      {
+        "title": "Classroom Activities",
+        "key": "classroom",
+        "accent": "#00BCD4",
+        "images": [
+          "https://images.unsplash.com/photo-1509062522246-3755977927d7",
+          "https://images.unsplash.com/photo-1588072432836-e10032774350",
+          "https://images.unsplash.com/photo-1503676260728-1c00da094a0b"
+        ]
+      },
+      {
+        "title": "Sports & Games",
+        "key": "sports",
+        "accent": "#FF5E5E",
+        "images": [
+          "https://images.unsplash.com/photo-1517649763962-0c623066013b",
+          "https://images.unsplash.com/photo-1521412644187-c49fa049e84d",
+          "https://images.unsplash.com/photo-1508609349937-5ec4ae374ebf"
+        ]
+      },
+      {
+        "title": "Art & Creative Activities",
+        "key": "art",
+        "accent": "#673AB7",
+        "images": [
+          "https://images.unsplash.com/photo-1523580846011-d3a5bc25702b",
+          "https://images.unsplash.com/photo-1519125323398-675f0ddb6308",
+          "https://images.unsplash.com/photo-1503676260728-1c00da094a0b"
+        ]
+      },
+      {
+        "title": "School Events & Celebrations",
+        "key": "events",
+        "accent": "#FFB74D",
+        "images": [
+          "https://images.unsplash.com/photo-1492538368677-f6e0afe31dcc",
+          "https://images.unsplash.com/photo-1519682337058-a94d519337bc",
+          "https://images.unsplash.com/photo-1509062522246-3755977927d7"
+        ]
+      }
+    ],
+
+    "card": {
+      "viewPhoto": "View Photo →"
+    },
+
+    "lightbox": {
+      "close": "✖",
+      "prev": "◀ Prev",
+      "next": "Next ▶"
+    }
+  },
+
+  
+  "footer": {
+    "brand": {
+      "title1": "Young",
+      "title2": "Achievers",
+      "tagline": "School of Excellence",
+      "description": "Young Achievers English Medium School in Gram Patna Tamoli, Panna — A modern learning environment focused on discipline, safety and concept-based education."
+    },
+
+    "social": [
+      { "label": "Facebook", "icon": "👍", "href": "#" },
+      { "label": "Instagram", "icon": "📷", "href": "#" },
+      { "label": "YouTube", "icon": "▶️", "href": "#" }
+    ],
+
+    "quickLinks": {
+      "title": "Quick Links",
+      "links": [
+        { "label": "Home", "to": "/" },
+        { "label": "About Us", "to": "/about" },
+        { "label": "Gallery", "to": "/gallery" },
+        { "label": "Contact", "to": "/contact" },
+        { "label": "Admission Enquiry", "to": "/admissions" }
+      ]
+    },
+
+    "academics": {
+      "title": "Academics",
+      "links": [
+        { "label": "Nursery – UKG", "to": "/academics/pre-primary" },
+        { "label": "Class 1 – 5", "to": "/academics/primary" },
+        { "label": "Class 6 – 8", "to": "/academics/middle" }
+      ]
+    },
+
+    "campus": {
+      "title": "Campus",
+      "links": [
+        { "label": "Classrooms", "to": "/classrooms" },
+        { "label": "Playground", "to": "/playground" },
+        { "label": "Library", "to": "/library" }
+      ]
+    },
+
+    "findUs": {
+      "title": "Find Us",
+      "address": "Gram Patna Tamoli,\nDistrict Panna, MP - 488001",
+      "officeTitle": "Admission Office",
+      "phone": "+91 87706 98713",
+      "phoneHref": "tel:+918770698713",
+      "timing": "Mon–Fri • 8:00 AM – 2:00 PM",
+      "email": "info@youngachievers.com",
+      "emailHref": "mailto:info@youngachievers.com"
+    },
+
+    "bottom": {
+      "rights": "All Rights Reserved",
+      "designedText": "Designed in Panna",
+      "heart": "❤️"
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}

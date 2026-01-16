@@ -75,16 +75,25 @@ const ContactPage = () => {
         createdAt: new Date().toISOString()
       };
 
+      // ✅ Timeout add (IMPORTANT for live)
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 20000); // 20 seconds
+
       const res = await fetch(`${API_BASE_URL}/api/contact-inquiry`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload)
+        body: JSON.stringify(payload),
+        signal: controller.signal
       });
+
+      clearTimeout(timeoutId);
 
       const data = await res.json().catch(() => ({}));
 
       if (!res.ok) {
-        throw new Error(data?.message || t("contactPage.form.errors.somethingWrong"));
+        throw new Error(
+          data?.message || t("contactPage.form.errors.somethingWrong")
+        );
       }
 
       setSuccessMsg(t("contactPage.form.successMsg"));
@@ -97,7 +106,11 @@ const ContactPage = () => {
         message: ""
       });
     } catch (err) {
-      setErrorMsg(err.message || t("contactPage.form.errors.failedToSend"));
+      if (err.name === "AbortError") {
+        setErrorMsg("Request timeout. Please try again.");
+      } else {
+        setErrorMsg(err.message || t("contactPage.form.errors.failedToSend"));
+      }
     } finally {
       setLoading(false);
     }
@@ -225,7 +238,9 @@ const ContactPage = () => {
                   }
                 `}
               >
-                {loading ? t("contactPage.form.btnSending") : t("contactPage.form.btnSend")}
+                {loading
+                  ? t("contactPage.form.btnSending")
+                  : t("contactPage.form.btnSend")}
               </button>
 
               <p className="text-xs text-gray-500 text-center mt-2">

@@ -95,11 +95,18 @@ const AdmissionInquiry = () => {
       // ✅ Toast loading
       const toastId = toast.loading(t("admissionPage.form.toast.loading"));
 
+      // ✅ Timeout add (IMPORTANT for live)
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 20000); // 20 seconds
+
       const res = await fetch(`${API_BASE_URL}/api/admission-inquiry`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
+        signal: controller.signal,
       });
+
+      clearTimeout(timeoutId);
 
       const data = await res.json().catch(() => ({}));
 
@@ -124,7 +131,11 @@ const AdmissionInquiry = () => {
         consent: false,
       });
     } catch (err) {
-      toast.error(err.message || t("admissionPage.form.toast.failedToSubmit"));
+      if (err?.name === "AbortError") {
+        toast.error("Request timeout. Please try again.");
+      } else {
+        toast.error(err.message || t("admissionPage.form.toast.failedToSubmit"));
+      }
     } finally {
       setLoading(false);
     }
